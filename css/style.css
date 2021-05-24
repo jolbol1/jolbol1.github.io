@@ -5,6 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+/* Elements */
 body {
     margin: 0;
     height: 100%;
@@ -29,6 +30,39 @@ header {
     padding: 1%;
 }
 
+header h1 {
+    margin: 0;
+    text-align: center;
+    color: #eceff1;
+    font-weight: bolder;
+}
+
+footer ul {
+    margin: 0;
+}
+
+footer {
+    position: sticky;
+    bottom: 0px;
+    background-color: #263238;
+    color: #eceff1;
+}
+
+footer li {
+    display: inline-table;
+    text-align: center;
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+    footer{
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  /* Classes */
+
 .intro {
     display: inline-block;
     width: 100%;
@@ -47,12 +81,7 @@ header {
     text-align: justify;
 }
 
-header h1 {
-    margin: 0;
-    text-align: center;
-    color: #eceff1;
-    font-weight: bolder;
-}
+
 
 .profile-image {
     display: inline-block;
@@ -84,20 +113,5 @@ header h1 {
     vertical-align: middle;
 }
 
-footer ul {
-    margin: 0;
-}
 
-footer {
-    position: sticky;
-    bottom: 0px;
-    background-color: #263238;
-    color: #eceff1;
-}
-
-footer li {
-    display: inline-table;
-    text-align: center;
-    width: 30%;
-}
 
