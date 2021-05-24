@@ -55,10 +55,18 @@ footer li {
 }
 
 @media screen and (max-width: 600px) {
-    footer{
+    .shrink{
       visibility: hidden;
       display: none;
     }
+
+    footer ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+
   }
 
   /* Classes */
