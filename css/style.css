@@ -54,6 +54,10 @@ footer li {
     width: 30%;
 }
 
+main li {
+    font-family: 'Roboto Mono';
+}
+
 @media screen and (max-width: 600px) {
     .shrink{
       visibility: hidden;
