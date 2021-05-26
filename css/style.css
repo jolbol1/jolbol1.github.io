@@ -12,7 +12,7 @@ body {
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
-    color: #0d47a1;
+    color: #eceff1;
     text-decoration: none;
 }
 
@@ -64,7 +64,14 @@ main li {
       display: none;
     }
 
+    footer li {
+        width: 50%;
+        float: right;
+    }
+
     footer ul {
+        display: inline-table;
+        width: 100%;
         margin: 0;
         padding: 0;
         text-align: center;
