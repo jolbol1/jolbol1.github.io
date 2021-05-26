@@ -12,7 +12,7 @@ body {
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
-    color: #eceff1;
+    color:blue;
     text-decoration: none;
 }
 
