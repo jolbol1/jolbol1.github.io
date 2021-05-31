@@ -229,7 +229,7 @@ footer {
     color: white;
 }
 
-#source-code:link, #source-code:visited, #source-code:hover, #source-code:focus, #source-code:active, #source-code:visited {
+footer:link, footer:visited, footer:hover, footer:focus, footer:active, footer:visited {
     color:white;
     text-decoration: none;
 }
