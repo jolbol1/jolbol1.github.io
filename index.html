@@ -12,40 +12,65 @@
     <link rel="manifest" href="./img/favicon/site.webmanifest">
     <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#474ebe">
     <link rel="shortcut icon" href="./img/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="msapplication-config" content="./img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <title>James Shopland</title>
 </head>
 <body>
-  <header>
-    <h1>James Shopland</h1>
-  </header>
-  <main>
-    <div class="intro">
-      <div class="profile-image">
-        <img src="https://avatars.githubusercontent.com/u/5064896?v=4">
-      </div>
-      <div class="profile-intro">
-        <h2>Welcome</h2>
-        <hr>
-        <p>I started this website in the hope it becomes a maintanable and improvable website as I develop my skills.</p>
-        <p>I have been a self-taught programmer for several years and have just started to take more serious courses with <a href="https://www.codecademy.com/">Codecademy</a>.</p>
-        <p>Have a browse of my projects and bio. My email is in the footer if you'd like to get in touch.</p>
-
-      </div>
+  <div id="easter-egg" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <h1>OUCH!</h1>
     </div>
-    <hr>
-    <div class="intro">
-      <div class="profile-image">
-        <img id="pc" src="./images/pc.png">
+  </div>
+  
+  <div class="header-container">
+    <header>
+      <h1>James Shopland</h1>
+
+      <nav>
+        <ul>
+          <li><a href="#about-me">About Me</a></li>
+          <li><a href="#code-experience">Development</a></li>
+          <li><a href="#git-projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <main>
+    <div class="grid-container">
+      <a id="about-me"></a>
+      <div class="intro about">
+        <div class="profile-image">
+          <img id="my-face" src="https://avatars.githubusercontent.com/u/5064896?v=4">
+        </div>
+        <div class="profile-intro">
+          <h2>Welcome</h2>
+          <p>😀 I started this website in the hope it becomes a maintanable and improvable website as I develop my skills.</p>
+          <p>💻 I have been a self-taught programmer for several years and have just started to take more serious courses with <a href="https://www.codecademy.com/" target="_blank">Codecademy</a>.</p>
+          <p>🔎 Have a browse of my projects and bio. My email is in the footer if you'd like to get in touch.</p>
+
+        </div>
       </div>
-      <div class="profile-intro">
-        <h2>Coding Experience</h2>
-        <hr>
-        <p>I have been a novice coder since I was 13, developing minigames for Minecraft. Since then I have taken on a variety of projects from custom Alexa skills to self hosted media servers. All of this has required me to dip my toes in several languages.</p>
-        <p>At the moment I am progressing through the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> This should get me a good grounding for JavaScript, Node.JS, SQL, Express.JS, React, TDD, and more...</p>
-        <p>The languages I am most comfortable with currently are:</p>
+      <a id="code-experience"></a>
+      <div class="intro experience">
+        <div class="profile-image">
+          <img id="pc" src="./images/pc.png">
+        </div>
+        <div class="profile-intro">
+          <h2>Coding Experience</h2>
+          <p>I have been a novice coder since I was 13, developing minigames for Minecraft. Since then I have taken on a variety of projects from custom Alexa skills to self hosted media servers. All of this has required me to dip my toes in several languages.</p>
+          <p>At the moment I am progressing through the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> This should get me a good grounding for JavaScript, Node.JS, SQL, Express.JS, React, TDD, etc.</p>
+        </div>
+      </div>
+      <div class="learning current">
+        <h3>Have Learnt</h3>
         <ul>
           <li><i class="devicon-javascript-plain colored"></i>&nbsp;JavaScript</li>
           <li><i class="devicon-java-plain-wordmark colored"></i>&nbsp;Java</li>
@@ -53,7 +78,19 @@
           <li><i class="devicon-html5-plain colored"></i>&nbsp;HTML</li>
           <li><i class="devicon-css3-plain colored"></i>&nbsp;CSS</li>
         </ul>
-        <p>Once I have completed my Full-Stack course I intend to learn:</p>
+      </div>
+      <div class="learning upcoming">
+        <h3>Next Courses</h3>
+        <ul>
+          <li><i class="devicon-javascript-plain colored"></i>&nbsp;JavaScript+</li>
+          <li><i class="devicon-react-original colored"></i>&nbsp;React</li>
+          <li><i class="devicon-redux-original colored"></i>&nbsp;Redux</li>
+          <li><i class="devicon-nodejs-plain colored"></i>&nbsp;NodeJS</li>
+          <li><i class="devicon-mysql-plain colored"></i>&nbsp;SQL</li>
+        </ul>
+      </div>
+      <div class="learning want">
+        <h3>Want to Learn</h3>
         <ul>
           <li><i class="devicon-cplusplus-plain colored"></i>&nbsp;C++</li>
           <li><i class="devicon-csharp-plain colored"></i>&nbsp;C#</li>
@@ -62,41 +99,57 @@
           <li><i class="devicon-go-plain colored"></i>&nbsp;Go</li>
         </ul>
       </div>
-    </div>    
-    <hr>
-    <div class="intro">
-      <div class="profile-image">
-        <img src="./images/GitHub-Mark.png">
+      <a id="git-projects"></a>
+      <div class="intro github">
+        <div class="profile-image">
+          <img src="./images/GitHub-Mark.png">
+        </div>
+        <div class="profile-intro">
+          <h2>GitHub</h2>
+          <p>I have been a novice coder since I was 13, developing minigames for Minecraft. Since then I have taken on a variety of projects from custom Alexa skills to self hosted media servers. All of this has required me to dip my toes in several languages.</p>
+          <p>At the moment I am progressing through the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> This should get me a good grounding for JavaScript, Node.JS, SQL, Express.JS, React, TDD, and more...</p>
+        </div>
       </div>
-      <div class="profile-intro">
-        <h2><a href="https://github.com/jolbol1/" target="_blank">GitHub</a></h2>
-        <hr>
-        <p>Visit my GitHub to see my projects and commits by clicking the link above.</p>
-        <p>Currently, the following projects have live web-page demos:</p>
-        <hr>
+      <div class="banner" id="latest"><h2>Latest Full Stack Course Projects</h2></div>
+      <div class="learning project" id="hero">
         <h3><a href="https://jamesshopland.com/hero_quotes/" target="_blank">Hero Quotes</a></h3>
         <p>This was part of the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> The prompt was to make a temrinal JavaScript app that would return some random quotes.</p>
-        <p>Since then I have used my own knowledge to add a webpage for it, utilising my skills in HTML, CSS and JavaScript DOM.</p>
-        <p><a href="https://github.com/jolbol1/hero_quotes" target="_blank">Link to Repo</a></p>
-        <hr>
-        <h3><a href="https://jamesshopland.com/web-design-system/" target="_blank">Web Design System</a></h3>
-        <p>This was part of the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> The prompt was to make a webpage with common CSS values to refer to when making other sites.</p>
-        <p>I am a big fan of the material design concept popularised by google so based the project around this.</p>
-        <p><a href="https://github.com/jolbol1/web-design-system" target="_blank">Link to Repo</a></p>
-        <hr>
+        <p>Utilising my skills in HTML, CSS and JavaScript DOM.</p>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/hero_quotes" target="_blank">Link to Repo</a></p>
+      </div>
+      <div class="learning project" id="tea">
+        <h3><a href="https://jamesshopland.com/tea_cozy/" target="_blank">Tea Cozy</a></h3>
+        <p>This was part of the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> The prompt was to make a fictional tea shop website.</p>
+        <p>Utilises CSS flexbox for a responsive design.</p>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/tea_cozy" target="_blank">Link to Repo</a></p>
+      </div>  
+      <div class="learning project" id="excursion">
         <h3><a href="https://jamesshopland.com/excursion/" target="_blank">Excursion</a></h3>
         <p>This was part of the Codecademy <a href="https://www.codecademy.com/learn/paths/full-stack-engineer-career-path" target="_blank">'Full Stack Engineer' course.</a> Example web page which advertises a product called “Excursion”. Utilizes HTML, CSS, Command Line Interface, Git, and GitHub.</p>
-        <p><a href="https://github.com/jolbol1/excursion" target="_blank">Link to Repo</a></p>
-        <hr>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/excursion" target="_blank">Link to Repo</a></p>
       </div>
-    </div>
-    <hr>
+      <div class="banner"><h2>Random Projects</h2></div>
+      <div class="learning project" id="random-coords">
+        <h3><a href="https://github.com/jolbol1/RandomCoordinatesV2" target="_blank">RandomCoords</a></h3>
+        <p>A Minecraft plugin. The rewrite of of my original RandomCoords. An advanced random teleporter for Minecraft. Over 100,000 downloads.</p>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/RandomCoordinatesV2" target="_blank">Link to Repo</a></p>
+      </div>
+      <div class="learning project" id="exporter">
+        <h3><a href="https://github.com/jolbol1/RadarrCollectionExporter" target="_blank">Radarr Collection Export</a></h3>
+        <p>Gets all the collections from Radarr and adds them to Plex Auto Collections or Plex Meta Manager.</p>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/RadarrCollectionExporter" target="_blank">Link to Repo</a></p>
+      </div>
+      <div class="learning project" id="ombi-add">
+        <h3><a href="https://github.com/jolbol1/OmbiAdd" target="_blank">OmbiAdd</a></h3>
+        <p>Built for interaction with Plex Autoscan. Allows marking of available within Ombi when Plex Autoscan has updated the movie/show file. Developed to bypass Ombi's slow library scanning.</p>
+        <p class="center"><a class="pure-material-button-contained" href="https://github.com/jolbol1/OmbiAdd" target="_blank">Link to Repo</a></p>
+      </div>
   </main>
   <footer>
     <ul>
       <li id="designed-by">Designed by James Shopland</li>
-      <li class="shrink"><a href="https://github.com/jolbol1/jolbol1.github.io">Source Code</a></li>
-      <li class="email">github@jamesshopland.com</li>
+      <li id="source"><a href="https://github.com/jolbol1/jolbol1.github.io" id="source-code">Source Code</a></li>
+      <li id="email">github@jamesshopland.com</li>
     </ul>
   </footer>
   <script src="./script.js" defer></script>
