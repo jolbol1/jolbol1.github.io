@@ -139,9 +139,15 @@ h2 {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    margin: 0 15px;
+    border: 1px solid black;
 }
 
-
+.intro.experience {
+    height: 30rem;
+    align-items: flex-start;
+    padding-top: 3rem;
+}
 
 .learning h3 {
     text-align: center;
@@ -186,8 +192,7 @@ h2 {
     align-content: space-between;
     justify-content: space-between;
     text-align: justify;
-    margin: 0 15px;
-    border: 1px solid black;
+
 }
 
 .learning.project p {
@@ -233,6 +238,10 @@ footer ul{
 }
 
 
+.intro.experience .profile-intro {
+    margin-top: 1.5vw;
+}
+
 @media only screen and (max-width: 1100px) {
     .learning {
         grid-row-end: span 6;
@@ -244,11 +253,28 @@ footer ul{
     }
 }
 
+@media only screen and (max-width: 970px) {
+    .intro.experience .profile-intro {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .intro.experience p {
+        font-size: 1rem;
+    }
+}
+
 @media only screen and (max-width: 820px) {
     .profile-intro p {
         font-size: 1rem;
         margin: 0;
     }
+
+    .intro.experience .profile-image {
+        margin-top: 5rem;
+    }
+
     .profile-image {
         padding: 0rem 2rem;
         height: 5rem;
@@ -302,6 +328,11 @@ footer ul{
     
     }
 
+
+    .intro.experience {
+        padding: 2rem 0;
+    }
+
     .learning.project h3 {
         width: 100%;
     }
@@ -325,6 +356,17 @@ footer ul{
     .github, .about, .experience{
         grid-area: span 9 / span 12;
     }
+
+    .intro.experience {
+        padding: 0;
+    }
+
+    .intro.experience .profile-image {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+
     .intro {
         flex-flow: row wrap;
         overflow: scroll;
@@ -350,9 +392,33 @@ footer ul{
 
 }
 
+@media only screen and (max-width: 425px) {
+    .intro.experience {
+        padding: 0;
+        height: 40rem;
+    }
+
+    .intro.experience .profile-image {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    .intro.experience .profile-intro {
+        margin-bottom: 12rem;
+    }
+}
+
 @media only screen and (max-width: 376px) {
     .github, .about, .experience{
         grid-area: span 10 / span 12;
+    }
+
+    .intro.experience {
+        height: 45rem;
+    }
+
+    .intro.experience .profile-intro {
+        margin-bottom: 12rem;
     }
 
     #email {
