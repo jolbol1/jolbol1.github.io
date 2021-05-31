@@ -143,6 +143,11 @@ h2 {
     border: 1px solid black;
 }
 
+.intro.about p, .intro.experience p, .intro.github p {
+    text-align: justify;
+    margin: 0.5rem 0;
+}
+
 .intro.experience {
     height: 30rem;
     align-items: flex-start;
@@ -317,6 +322,12 @@ footer ul{
     }
 }
 
+@media only screen and (max-width: 580px) {
+    .intro.experience {
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 530px) {
     .learning {
         grid-row-end: span 6;
@@ -329,9 +340,7 @@ footer ul{
     }
 
 
-    .intro.experience {
-        padding: 2rem 0;
-    }
+
 
     .learning.project h3 {
         width: 100%;
@@ -352,7 +361,7 @@ footer ul{
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 490px) {
     .github, .about, .experience{
         grid-area: span 9 / span 12;
     }
