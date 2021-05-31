@@ -24,6 +24,11 @@ html {
     scroll-behavior: smooth;
 }
 
+#about-me, #code-experience, #git-projects {
+    position: relative;
+    top: -5rem;
+}
+
 a:link, a:visited, a:hover, a:focus, a:active {
     color:black;
     text-decoration: none;
