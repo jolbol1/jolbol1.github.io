@@ -342,7 +342,9 @@ footer ul{
     
     }
 
-
+    #about-text {
+        display: none;
+    }
 
 
     .learning.project h3 {
