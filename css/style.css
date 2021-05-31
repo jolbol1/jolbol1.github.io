@@ -3,21 +3,19 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-
 /* Elements */
 body {
     margin: 0;
     height: 100%;
-    color: white;
-    background-image: url(https://images.pexels.com/photos/631477/pexels-photo-631477.jpeg?cs=srgb&dl=pexels-neale-lasalle-631477.jpg&fm=jpg);
+    color: black;
+    background-color: rgb(206, 206, 206);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 main, footer {
     position: relative;
-    top: 5rem;
+    top: 6rem;
 }
 
 html {
@@ -26,23 +24,36 @@ html {
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
-    color:white;
+    color:black;
     text-decoration: none;
 }
 
 a:visited {
-    color: white;
+    color: black;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.5);
+.header-container {
+    background-color: rgba(255, 255, 255, 1);
     position: fixed;
     top: 0;
     width: 100%;
+    margin: 0 auto;
     height: 5rem;
+    z-index: 10;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+header {
+    margin: 0 auto;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    width: 90%;
     display: flex;
     justify-content: space-between;
     z-index: 10;
+    color: black;
+
 }
 
 header nav ul {
@@ -51,10 +62,14 @@ header nav ul {
     list-style: none;
     display: flex;
     height: 100%;
+    padding: 0;
 }
 
 header h1 {
-    margin: auto 1rem;
+    margin: auto 0;
+    font-family: 'Montserrat', sans-serif;    
+    font-weight: 900;
+    font-style: italic;
 }
 
 header nav ul li {
@@ -72,7 +87,9 @@ header nav ul li {
     align-content: center;
 }
 
-
+h2 {
+    font-family:  'Montserrat', sans-serif; 
+}
 
 .profile-image {
     height: 75%;
@@ -84,7 +101,8 @@ header nav ul li {
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
-    border: 2px dotted white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 }
 
 .profile-intro {
@@ -98,12 +116,12 @@ header nav ul li {
 }
 
 .intro {
-    background-color: #64b4f6ab;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-
+    box-shadow: 6px 6px 6px 1px rgba(0, 0, 0, 0.404);
 }
 
 
@@ -112,18 +130,17 @@ header nav ul li {
 }
 
 .learning {
-    background-color: #d500f9ab;
+    background-color: #ffffff;
     grid-row-end: span 6;
     grid-column: span 4;
-
-}
-
-.learning {
+    box-shadow: 6px 6px 6px 1px rgba(0, 0, 0, 0.404);
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .learning h3 {
     text-align: center;
@@ -139,26 +156,37 @@ header nav ul li {
     margin: 0;
     height: 80%;
     padding: 0 1rem;
-    font-family: 'Roboto Mono', monospace;
     display: inline-flex;
     flex-flow: column wrap;
 }
 
 .learning li {
     margin: 0.5rem 0;
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 .banner {
     grid-column: span 12;
     grid-row: span 2;
-    background-color: #4a148c;
+    background-color: #eeeeee;
     text-align: center;
+    height: 16rem;
+    box-shadow: 6px 6px 6px 1px rgba(0, 0, 0, 0.404);
+
+
+}
+
+.banner h2 {
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 .learning.project {
     align-content: space-between;
     justify-content: space-between;
     text-align: justify;
+    margin: 0 15px;
+    border: 1px solid black;
 }
 
 .learning.project p {
@@ -176,12 +204,23 @@ header nav ul li {
     margin-top: 1rem;
 }
 
+h3, a {
+    font-weight: 700;
+    font-family: 'Ubuntu', monospace;
+}
+
+
 footer {
     width: 100%;
     padding: 1rem 0;
     position: relative;
     bottom: 0;
+    color: white;
+}
 
+#source-code:link, #source-code:visited, #source-code:hover, #source-code:focus, #source-code:active, #source-code:visited {
+    color:white;
+    text-decoration: none;
 }
 
 footer ul{
@@ -192,9 +231,9 @@ footer ul{
     padding: 0;
 }
 
-@media only screen and (max-width: 950px) {
+
+@media only screen and (max-width: 1100px) {
     .learning {
-        background-color: #d500f9ab;
         grid-row-end: span 6;
         grid-column: span 6;
     
@@ -222,15 +261,26 @@ footer ul{
         border: 2px dotted white;
     }
 
-}
 
-@media only screen and (max-width: 630px) {
-    header nav {
-        display: none;
-    }
     header {
         justify-content: center;
+        flex-flow: row wrap;
+        align-items: center;
     }
+    header h1 {
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: space-around;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
     .learning.project p {
         font-size: 0.8rem;
     }
@@ -242,7 +292,6 @@ footer ul{
 
 @media only screen and (max-width: 530px) {
     .learning {
-        background-color: #d500f9ab;
         grid-row-end: span 6;
         grid-column: span 12;
         font-size: 1rem;
@@ -294,10 +343,13 @@ footer ul{
     #latest {
         grid-row: span 3;
     }
+    header h1 {
+        margin: auto 0;
+    }
 
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 376px) {
     .github, .about, .experience{
         grid-area: span 10 / span 12;
     }
@@ -305,10 +357,15 @@ footer ul{
     #email {
         display: none;
     }
+        
+    header nav {
+        display: none;
+    }
+    
 
 }
 
-@media only screen and (max-width: 275px) {
+@media only screen and (max-width: 300px) {
     header h1 {
         text-align: center;
     }
@@ -333,7 +390,7 @@ footer ul{
     text-overflow: ellipsis;
     text-transform: uppercase;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    background-color: #e040fb;
+    background-color: #8d8f8b;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
     font-size: 14px;
