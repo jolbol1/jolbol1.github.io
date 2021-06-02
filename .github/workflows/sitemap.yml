@@ -25,7 +25,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: update sitemap
-        branch: master
+        branch: main
         commit_user_name: sitemap-bot # defaults to "GitHub Actions"
         commit_user_email: sitemap-bot@jamesshopland.com # defaults to "actions@github.com"
         push_options: '--force'    
