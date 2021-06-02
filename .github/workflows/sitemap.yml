@@ -29,11 +29,6 @@ jobs:
         commit_user_name: sitemap-bot # defaults to "GitHub Actions"
         commit_user_email: sitemap-bot@jamesshopland.com # defaults to "actions@github.com"
         push_options: '--force'    
-        skip_dirty_check: true    
-        skip_fetch: true    
-        
-        # Optional. Prevents the shell from expanding filenames. 
-        # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
-        disable_globbing: true
+
 
 
