@@ -21,16 +21,19 @@ jobs:
       with:
         base-url-path: https://jamesshopland.com/
 
-- uses: stefanzweifel/git-auto-commit-action@v4
-  with:
-    commit_message: update sitemap
-    branch: master
-    commit_user_name: sitemap-bot # defaults to "GitHub Actions"
-    commit_user_email: sitemap-bot@jamesshopland.com # defaults to "actions@github.com"
-    push_options: '--force'    
-    skip_dirty_check: true    
-    skip_fetch: true    
-    
-    # Optional. Prevents the shell from expanding filenames. 
-    # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
-    disable_globbing: true
+    - name: Generate the sitemap
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: update sitemap
+        branch: master
+        commit_user_name: sitemap-bot # defaults to "GitHub Actions"
+        commit_user_email: sitemap-bot@jamesshopland.com # defaults to "actions@github.com"
+        push_options: '--force'    
+        skip_dirty_check: true    
+        skip_fetch: true    
+        
+        # Optional. Prevents the shell from expanding filenames. 
+        # Details: https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html
+        disable_globbing: true
+
+
