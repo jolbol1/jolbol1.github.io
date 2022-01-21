@@ -2,7 +2,6 @@ import React from "react";
 
 export const ScrollChevron = ({ scrollToId }) => {
   const handleClick = () => {
-    console.log(scrollToId);
     document
       .getElementById(scrollToId)
       .scrollIntoView({ behavior: "smooth", block: "start" });
