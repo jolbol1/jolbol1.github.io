@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build && echo 'jamesshopland.com' > ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
