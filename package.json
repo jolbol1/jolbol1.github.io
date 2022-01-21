@@ -1,0 +1,32 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "personal-site",
+  "author": "james",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "gatsby": "^4.5.4",
+    "gatsby-plugin-image": "^2.5.2",
+    "gatsby-plugin-postcss": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.5.2",
+    "gatsby-plugin-sitemap": "^5.5.0",
+    "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-transformer-sharp": "^4.5.0",
+    "postcss": "^8.4.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-tsparticles": "^1.39.0",
+    "tailwindcss": "^3.0.15"
+  }
+}
