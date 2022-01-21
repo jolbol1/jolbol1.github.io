@@ -4,12 +4,15 @@ import { ParticlesContainer } from "../components/ParticlesContainer";
 import { ProjectTree } from "../components/ProjectTree";
 import { ScrollChevron } from "../components/scrollChevron";
 import { SectionHeading } from "../components/SectionHeading";
+import SEO from "../components/SEO/SEO";
 import { SkillsComponent } from "../components/SkillsComponent";
 import { TextContainer } from "../components/TextContainer";
 
 // markup
 const IndexPage = () => {
   return (
+    <>
+    <SEO />
     <main className="text-white">
       <title>Home Page</title>
       {/* Section One */}
@@ -60,7 +63,7 @@ const IndexPage = () => {
         </div>
       </div>
       <ParticlesContainer></ParticlesContainer>
-    </main>
+    </main></>
   );
 };
 
