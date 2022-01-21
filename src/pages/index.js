@@ -25,17 +25,18 @@ const IndexPage = () => {
         <ScrollChevron scrollToId={"About"} />
       </div>
       <div
-        className="min-h-screen relative"
+        className="min-h-screen relative z-0"
         style={{ backgroundColor: "#385170" }}
       >
         <div className="pt-6">
           <SectionHeading text="About Me" id="About" />
         </div>
-        <div className="flex flex-col mt-6 gap-y-6 xl:flex-row justify-center content-center items-center justify-items-center md:mx-6 2xl:m-12 p-3 xl:p-6 2xl:p-12 pb-48">
+        <div className=" z-20 flex flex-col mt-6 gap-y-6 xl:flex-row justify-center content-center items-center justify-items-center md:mx-6 2xl:m-12 p-3 xl:p-6 2xl:p-12 pb-48">
           <TextContainer />
           <SkillsComponent />
         </div>
         <svg
+          className="-z-10"
           style={{ position: "absolute", bottom: "0" }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
