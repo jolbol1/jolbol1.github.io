@@ -6,7 +6,6 @@ export const ScrollChevron = ({ scrollToId }) => {
     document
       .getElementById(scrollToId)
       .scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.replaceState(undefined, undefined, `#${scrollToId}`);
   };
 
   const handleKeyPress = (event) => {
@@ -14,7 +13,6 @@ export const ScrollChevron = ({ scrollToId }) => {
       document
       .getElementById(scrollToId)
       .scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.replaceState(undefined, undefined, `#${scrollToId}`);
     }
   }
 
