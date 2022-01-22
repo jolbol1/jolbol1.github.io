@@ -16,7 +16,10 @@
     "deploy": "gatsby build && echo 'jamesshopland.com' > ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
+    "@heroicons/react": "^1.0.5",
     "autoprefixer": "^10.4.2",
+    "dotenv": "^14.2.0",
     "gatsby": "^4.5.4",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
@@ -25,15 +28,18 @@
     "gatsby-plugin-sharp": "^4.5.2",
     "gatsby-plugin-sitemap": "^5.5.0",
     "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-source-github-api": "^1.0.0",
     "gatsby-transformer-sharp": "^4.5.0",
     "postcss": "^8.4.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-tsparticles": "^1.39.0",
+    "showdown": "^1.9.1",
     "tailwindcss": "^3.0.15"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0",
     "gh-pages": "^3.2.3"
   }
 }

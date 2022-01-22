@@ -7,6 +7,7 @@ import { SectionHeading } from "../components/SectionHeading";
 import SEO from "../components/SEO/SEO";
 import { SkillsComponent } from "../components/SkillsComponent";
 import { TextContainer } from "../components/TextContainer";
+import NavBar from "../components/NavBar";
 
 // markup
 const IndexPage = () => {
@@ -15,6 +16,9 @@ const IndexPage = () => {
     <SEO />
     <main className="text-white">
       <title>Home Page</title>
+      <div style={{position: 'fixed', width: '100%', zIndex: 50}}>
+        <NavBar pageNumber={0} scrollHide={true} />
+        </div>
       {/* Section One */}
       <div className="min-h-screen custom-gradient flex flex-col justify-between relative">
         <IntroHero />

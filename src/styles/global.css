@@ -3,6 +3,15 @@
 @tailwind utilities;
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap);
 
+
+#helloguys {
+  display: none;
+}
+
+.theme-color {
+  background-color: rgb(23, 23, 49);
+}
+
 .custom-gradient {
   background: rgb(23, 23, 49);
   background: linear-gradient(180deg, rgb(23, 23, 49) 0%, rgb(8, 34, 63) 100%);
