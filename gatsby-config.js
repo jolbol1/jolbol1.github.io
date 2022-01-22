@@ -3,6 +3,8 @@ require('dotenv').config({
 })
 
 const website = require('./config/website')
+const { githubApiQuery } = require('./config/githubQuery')
+
 
 
 module.exports = {
@@ -47,5 +49,22 @@ module.exports = {
         icon: website.favicon,
       },
     },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        url: "https://api.github.com/graphql", // default Github GraphQL v4 API endpoint
+  
+        // token: required by the GitHub API
+        token: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+  
+        // GraphQLquery: defaults to a search query
+        graphQLQuery: githubApiQuery,
+  
+        // variables: defaults to variables needed for a search query
+        variables: {
+          github_login: process.env.GITHUB_LOGIN
+        }
+      }
+    }
   ],
 };
