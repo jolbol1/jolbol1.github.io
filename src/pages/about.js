@@ -4,7 +4,6 @@ import { ParticlesContainer } from "../components/ParticlesContainer";
 import { graphql } from "gatsby";
 import showdown from "showdown";
 import SEO from "../components/SEO/SEO";
-import NavBar from "../components/NavBar";
 
 // markup
 const AboutMe = () => {
