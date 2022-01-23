@@ -14,7 +14,7 @@ const IndexPage = () => {
   return (
     <>
     <SEO />
-    <main className="text-white ">
+    <main className="text-white pb-12">
       <title>Home Page</title>
 
       {/* Section One */}

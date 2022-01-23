@@ -8,7 +8,7 @@ export default function Layout({ children, uri }) {
         <NavBar uri={uri}/>
       </div>
       {children}
-      <footer className="h-12 bg-slate-900 flex justify-center items-center z-50 relative">
+      <footer className="h-12 bg-slate-900 flex justify-center items-center z-50 relative -mt-12">
         <a href="mailto:enquiries@jamesshopland.com" className="font-bold text-center text-gray-300 w-fit h-fit">enquiries@jamesshopland.com</a>
       </footer>
     </>

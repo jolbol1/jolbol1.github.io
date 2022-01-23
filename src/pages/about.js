@@ -34,7 +34,7 @@ const AboutMe = () => {
     <>
       <SEO />
       <ParticlesContainer></ParticlesContainer>
-      <main className="text-white custom-gradient pb-16">
+      <main className="text-white custom-gradient pb-24">
         <title>About Me</title>
         <div>
           <h1 className="text-5xl lg:text-7xl font-bold header-text mb-3 text-center pt-24">
