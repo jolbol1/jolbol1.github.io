@@ -6,7 +6,7 @@ const svg = "w-16 h-16";
 
 export const SkillsComponent = () => {
   return (
-    <div className="grid grid-cols-3 grid-rows-6 auto-rows-fr md:w-3/4 xl:w-1/2 md:mx-auto">
+    <div className="grid grid-cols-3 grid-rows-6 auto-rows-fr w-full md:w-3/4 xl:w-1/2 md:mx-auto">
       <div></div>
       <div className={devIconCenter}>
         <svg className={svg} viewBox="0 0 128 128">
