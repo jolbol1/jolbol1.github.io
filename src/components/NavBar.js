@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "gatsby"
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -125,9 +127,9 @@ export default function NavBar({ uri }) {
                             )}
                           </a>
                         ) : (
-                          <a
+                          <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.href}
                             className={classNames(
                               item.current
                                 ? "bg-cyan-300 "
@@ -137,7 +139,7 @@ export default function NavBar({ uri }) {
                             aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         )
                       )}
                     </div>
