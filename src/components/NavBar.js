@@ -30,7 +30,6 @@ export default function NavBar({ uri }) {
 
   useEffect(() => {
     let updatedNav = navigation.map((page, index) => {
-      console.log(uri)
       if (uri == null && page.href === "/") {
         return { ...page, current: true };
       } else if (page.href === uri) {
