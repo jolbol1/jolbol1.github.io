@@ -14,9 +14,6 @@ const IndexPage = () => {
   return (
     <>
     <SEO />
-    <div style={{position: 'fixed', width: '100%', zIndex: 50}}>
-        <NavBar pageNumber={0} scrollHide={true} />
-        </div>
     <main className="text-white ">
       <title>Home Page</title>
 
