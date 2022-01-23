@@ -30,6 +30,7 @@ export default function NavBar({ uri }) {
 
   useEffect(() => {
     let updatedNav = navigation.map((page, index) => {
+      console.log(uri)
       if (uri == null && page.href === "/") {
         return { ...page, current: true };
       } else if (page.href === uri) {
@@ -45,6 +46,7 @@ export default function NavBar({ uri }) {
   useEffect(() => {
     if (uri == null || uri === "/") {
       setShowOnScroll(true);
+      setIsVisible(false);
     } else {
       setShowOnScroll(false);
       setIsVisible(true);
