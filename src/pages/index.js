@@ -14,11 +14,12 @@ const IndexPage = () => {
   return (
     <>
     <SEO />
-    <main className="text-white">
-      <title>Home Page</title>
-      <div style={{position: 'fixed', width: '100%', zIndex: 50}}>
+    <div style={{position: 'fixed', width: '100%', zIndex: 50}}>
         <NavBar pageNumber={0} scrollHide={true} />
         </div>
+    <main className="text-white ">
+      <title>Home Page</title>
+
       {/* Section One */}
       <div className="min-h-screen custom-gradient flex flex-col justify-between relative">
         <IntroHero />
@@ -32,13 +33,13 @@ const IndexPage = () => {
         <ScrollChevron scrollToId={"About"} />
       </div>
       <div
-        className="min-h-screen relative z-0 pb-6"
+        className="min-h-screen relative z-0"
         style={{ backgroundColor: "#385170" }}
       >
         <div className="pt-6">
           <SectionHeading text="About Me" id="About" />
         </div>
-        <div className=" z-20 flex flex-col mt-6 gap-y-6 xl:flex-row justify-center content-center items-center justify-items-center md:mx-6 2xl:m-12 p-3 xl:p-6 2xl:p-12 pb-48">
+        <div className=" z-20 flex flex-col mt-6 gap-y-6 xl:flex-row justify-center content-center items-center justify-items-center mb-0 2xl:mb-0 md:mx-6 2xl:m-12 p-3 xl:p-6 2xl:p-12 pb-48">
           <TextContainer />
           <SkillsComponent />
         </div>
