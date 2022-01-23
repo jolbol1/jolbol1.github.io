@@ -32,7 +32,7 @@ const IndexPage = () => {
         <ScrollChevron scrollToId={"About"} />
       </div>
       <div
-        className="min-h-screen relative z-0"
+        className="min-h-screen relative z-0 pb-6"
         style={{ backgroundColor: "#385170" }}
       >
         <div className="pt-6">
