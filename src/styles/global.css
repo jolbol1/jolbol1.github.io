@@ -3,15 +3,20 @@
 @tailwind utilities;
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap);
 
+.nav-icons > svg {
+  height: 100%;
+  width: 100%;
+}
+
 .header-text {
   text-shadow: 0 1px 0 rgb(105, 105, 105), 0 2px 0 rgb(105, 105, 105),
-  0 3px 0 rgb(105, 105, 105), 0 4px 0 rgb(105, 105, 105),
-  0 5px 0 rgb(105, 105, 105), 0 6px 0 rgb(105, 105, 105),
-  0 7px 0 rgb(105, 105, 105), 0 8px 0 rgb(105, 105, 105),
-  0 9px 0 rgb(105, 105, 105), 0 50px 30px rgba(0, 0, 0, 0.3);
+    0 3px 0 rgb(105, 105, 105), 0 4px 0 rgb(105, 105, 105),
+    0 5px 0 rgb(105, 105, 105), 0 6px 0 rgb(105, 105, 105),
+    0 7px 0 rgb(105, 105, 105), 0 8px 0 rgb(105, 105, 105),
+    0 9px 0 rgb(105, 105, 105), 0 50px 30px rgba(0, 0, 0, 0.3);
 }
 .scroll-fix {
-  scroll-margin-top: 64px
+  scroll-margin-top: 64px;
 }
 
 #helloguys {
