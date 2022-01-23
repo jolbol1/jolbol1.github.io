@@ -65,6 +65,12 @@ module.exports = {
           github_login: process.env.GITHUB_LOGIN
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout`),
+      },
+    },
   ],
 };

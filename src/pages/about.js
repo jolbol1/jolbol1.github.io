@@ -37,11 +37,8 @@ const AboutMe = () => {
       <ParticlesContainer></ParticlesContainer>
       <main className="text-white custom-gradient pb-16">
         <title>About Me</title>
-        <div style={{position: 'fixed', width: '100%', zIndex: 50}}>
-        <NavBar pageNumber={1} />
-        </div>
         <div>
-          <h1 className="text-5xl lg:text-7xl font-bold test mb-3 text-center pt-24">
+          <h1 className="text-5xl lg:text-7xl font-bold header-text mb-3 text-center pt-24">
             About Me
           </h1>
           <article
