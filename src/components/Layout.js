@@ -4,12 +4,10 @@ import NavBar from "./NavBar";
 export default function Layout({ children, uri }) {
 
   const handleScript = () =>{
-    console.log("Fucking finally")
     loadStars()
   }
   
   React.useEffect(() => {
-    console.log("Testing");
     const script = document.createElement("script");
     script.addEventListener("load", handleScript);
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.39.0/tsparticles.slim.min.js";
