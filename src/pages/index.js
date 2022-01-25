@@ -8,16 +8,15 @@ import { SkillsComponent } from "../components/SkillsComponent";
 import { TextContainer } from "../components/TextContainer";
 // markup
 
-
 const IndexPage = () => {
   return (
     <>
       <SEO />
-      <main className="text-white pb-12">
+      <main className="pb-12 text-white">
         <title>Home Page</title>
 
         {/* Section One */}
-        <div className="min-h-screen custom-gradient flex flex-col justify-between relative">
+        <div className="custom-gradient relative flex min-h-screen flex-col justify-between">
           <IntroHero />
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
@@ -29,13 +28,13 @@ const IndexPage = () => {
           <ScrollChevron scrollToId={"About"} />
         </div>
         <div
-          className="min-h-screen relative z-0"
+          className="relative z-0 min-h-screen"
           style={{ backgroundColor: "#385170" }}
         >
           <div className="pt-6">
             <SectionHeading text="About Me" id="About" />
           </div>
-          <div className=" z-20 flex flex-col mt-6 gap-y-6 xl:flex-row justify-center content-center items-center justify-items-center mb-0 2xl:mb-0 md:mx-6 2xl:m-12 p-3 xl:p-6 2xl:p-12 pb-48">
+          <div className=" z-20 mt-6 mb-0 flex flex-col content-center items-center justify-center justify-items-center gap-y-6 p-3 pb-48 md:mx-6 xl:flex-row xl:p-6 2xl:m-12 2xl:mb-0 2xl:p-12">
             <TextContainer />
             <SkillsComponent />
           </div>
@@ -54,12 +53,12 @@ const IndexPage = () => {
           <ScrollChevron scrollToId={"Projects"} />
         </div>
 
-        <div className="min-h-screen h-fit bg-black">
+        <div className="h-fit min-h-screen bg-black">
           <br />
           <div className="pt-6">
             <SectionHeading text="Git Projects" id="Projects" />
           </div>
-          <div className="flex justify-items-start items-start content-center justify-center pt-3 md:pt-12">
+          <div className="flex content-center items-start justify-center justify-items-start pt-3 md:pt-12">
             <ProjectTree />
           </div>
         </div>

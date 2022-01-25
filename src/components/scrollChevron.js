@@ -8,19 +8,19 @@ export const ScrollChevron = ({ scrollToId }) => {
   };
 
   const handleKeyPress = (event) => {
-    if(event.key === 'Enter'){
+    if (event.key === "Enter") {
       document
-      .getElementById(scrollToId)
-      .scrollIntoView({ behavior: "smooth", block: "start" });
+        .getElementById(scrollToId)
+        .scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   return (
     <div
       tabIndex={0}
       role="button"
       onClick={handleClick}
-      className="w-full flex flex-col items-center pointer"
+      className="pointer flex w-full flex-col items-center"
       style={{ position: "absolute", bottom: "2rem" }}
       onKeyPress={handleKeyPress}
     >

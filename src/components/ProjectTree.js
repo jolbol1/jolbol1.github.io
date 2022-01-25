@@ -13,15 +13,15 @@ export const ProjectTree = () => {
 
   return (
     <div>
-      <div class="relative wrap overflow-hidden p-10">
+      <div class="wrap relative overflow-hidden p-10">
         <div
-          class="border-2-2 absolute border-opacity-20 border-gray-700 border hidden md:block"
+          class="border-2-2 absolute hidden border border-gray-700 border-opacity-20 md:block"
           style={{ left: "50%", height: "80%" }}
         ></div>
-        <div class="md:mb-8 mb-3 flex justify-between items-center w-full right-timeline md:flex-row flex-col">
+        <div class="right-timeline mb-3 flex w-full flex-col items-center justify-between md:mb-8 md:flex-row">
           <div class="order-1 w-5/12"></div>
-          <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full mb-3 md:mb-0">
-            <h1 class="mx-auto font-semibold text-lg text-white">
+          <div class="z-20 order-1 mb-3 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-xl md:mb-0">
+            <h1 class="mx-auto text-lg font-semibold text-white">
               <svg style={{ width: 24, height: 24 }} viewBox="0 0 128 128">
                 <path
                   d="M109 50h-4.8l-1.2 6h-3.8l1.2-6h-4.9l-1.2 6H89v5h4.4l-.9 4H89v5h2.5l-1.2 6h4.8l1.2-6h3.8l-1.2 6h4.9l1.2-6h5v-5h-4.1l.9-4h3.2v-5h-2.2l1.2-6zm-7.9 15h-3.8l.9-4h3.8l-.9 4zm15.4-32.7c-.6-1.1-1.4-2.1-2.3-2.6L66.1 1.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7L11.4 29.7c-1.7 1-3.4 3.5-3.4 5.4v55.7c0 1.1.7 2.3 1.4 3.4l.1.1c.5.8 1.3 1.5 2 1.9l48.3 27.9c.8.5 2 .7 3.2.7 1.2 0 2.3-.3 3.1-.7l47.5-27.9c1.7-1 2.4-3.5 2.4-5.4V35.1c0-.8.4-1.8 0-2.6l.5-.2zm-4.2 2.1c0 .3-.3.5-.3.7v55.7c0 .8-.2 1.7-.4 2L64 120.6c-.1.1-.5.2-1.1.2-.6 0-1-.1-1.1-.2L13.6 92.8s-.1-.1-.2-.1l-.6-.6c-.4-.7.2-1.1-.8-1.2V35.2c1-.5.9-1.7 1.4-1.9L61.7 5.4c.1 0 .6-.2 1.2-.2s1 .1 1.1.2l48 27.7.4.9c.1.1-.1.3-.1.4zM63 87.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6C80.1 82.5 72.1 87.5 63 87.5z"
@@ -33,13 +33,13 @@ export const ProjectTree = () => {
           <div
             tabIndex={0}
             role="button"
-            class="order-1 bg-gray-400 rounded-lg md:w-5/12 px-6 py-4 shadow-white/20 shadow-xl cursor-pointer hover:bg-gray-100"
+            class="order-1 cursor-pointer rounded-lg bg-gray-400 px-6 py-4 shadow-xl shadow-white/20 hover:bg-gray-100 md:w-5/12"
             onClick={() => handleClick("https://github.com/jolbol1/HeardIt")}
             onKeyPress={(e) =>
               handleKeyPress(e, "https://github.com/jolbol1/HeardIt")
             }
           >
-            <h3 class="mb-3 font-bold text-gray-800 text-xl">HeardIt</h3>
+            <h3 class="mb-3 text-xl font-bold text-gray-800">HeardIt</h3>
             <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
               A reddit client to read posts and comments to you. Built with
               TailwindCSS, C# and Blazor.
@@ -47,10 +47,10 @@ export const ProjectTree = () => {
           </div>
         </div>
 
-        <div class="md:mb-8 mb-3 flex justify-between md:flex-row-reverse items-center w-full left-timeline flex-col">
+        <div class="left-timeline mb-3 flex w-full flex-col items-center justify-between md:mb-8 md:flex-row-reverse">
           <div class="order-1 w-5/12"></div>
-          <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full mb-3 md:mb-0">
-            <h1 class="mx-auto text-white font-semibold text-lg">
+          <div class="z-20 order-1 mb-3 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-xl md:mb-0">
+            <h1 class="mx-auto text-lg font-semibold text-white">
               <svg style={{ width: 24, height: 24 }} viewBox="0 0 128 128">
                 <g fill="#fff">
                   <circle cx="64" cy="64" r="11.4"></circle>
@@ -62,13 +62,13 @@ export const ProjectTree = () => {
           <div
             tabIndex={0}
             role="button"
-            class="order-1 bg-slate-900 rounded-lg shadow-xl md:w-5/12 px-6 py-4 shadow-blue-500/20 cursor-pointer hover:bg-slate-700"
+            class="order-1 cursor-pointer rounded-lg bg-slate-900 px-6 py-4 shadow-xl shadow-blue-500/20 hover:bg-slate-700 md:w-5/12"
             onClick={() => handleClick("https://github.com/jolbol1/jammming")}
             onKeyPress={(e) =>
               handleKeyPress(e, "https://github.com/jolbol1/jammming")
             }
           >
-            <h3 class="mb-3 font-bold text-white text-xl">Jammming</h3>
+            <h3 class="mb-3 text-xl font-bold text-white">Jammming</h3>
             <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">
               Search songs and add them to your own spotify playlist. Part of a
               Codecademy course. Built using React
@@ -76,10 +76,10 @@ export const ProjectTree = () => {
           </div>
         </div>
 
-        <div class="md:mb-8 mb-3 flex justify-between items-center w-full right-timeline md:flex-row flex-col">
+        <div class="right-timeline mb-3 flex w-full flex-col items-center justify-between md:mb-8 md:flex-row">
           <div class="order-1 w-5/12"></div>
-          <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full mb-3 md:mb-0">
-            <h1 class="mx-auto font-semibold text-lg text-white">
+          <div class="z-20 order-1 mb-3 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-xl md:mb-0">
+            <h1 class="mx-auto text-lg font-semibold text-white">
               <svg style={{ width: 24, height: 24 }} viewBox="0 0 128 128">
                 <path
                   fill="#fff"
@@ -91,13 +91,13 @@ export const ProjectTree = () => {
           <div
             tabIndex={0}
             role="button"
-            class="order-1 bg-gray-400 rounded-lg md:w-5/12 px-6 py-4 shadow-white/20 shadow-xl cursor-pointer hover:bg-gray-100"
+            class="order-1 cursor-pointer rounded-lg bg-gray-400 px-6 py-4 shadow-xl shadow-white/20 hover:bg-gray-100 md:w-5/12"
             onClick={() => handleClick("https://github.com/jolbol1/bedTime")}
             onKeyPress={(e) =>
               handleKeyPress(e, "https://github.com/jolbol1/bedTime")
             }
           >
-            <h3 class="mb-3 font-bold text-gray-800 text-xl">BedTime</h3>
+            <h3 class="mb-3 text-xl font-bold text-gray-800">BedTime</h3>
             <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
               A custom HTML element for Organizr. Select a time, and it will
               kill your pPex stream at this time. Built with Python, PHP and
@@ -106,10 +106,10 @@ export const ProjectTree = () => {
           </div>
         </div>
 
-        <div class="md:mb-8 mb-3 flex justify-between md:flex-row-reverse items-center w-full left-timeline flex-col">
+        <div class="left-timeline mb-3 flex w-full flex-col items-center justify-between md:mb-8 md:flex-row-reverse">
           <div class="order-1 w-5/12"></div>
-          <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full mb-3 md:mb-0">
-            <h1 class="mx-auto text-white font-semibold text-lg">
+          <div class="z-20 order-1 mb-3 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-xl md:mb-0">
+            <h1 class="mx-auto text-lg font-semibold text-white">
               <svg style={{ width: 24, height: 24 }} viewBox="0 0 128 128">
                 <path
                   fill="#fff"
@@ -137,7 +137,7 @@ export const ProjectTree = () => {
           <div
             tabIndex={0}
             role="button"
-            class="order-1 bg-slate-900 rounded-lg shadow-xl md:w-5/12 shadow-blue-500/20 px-6 py-4 cursor-pointer hover:bg-slate-700"
+            class="order-1 cursor-pointer rounded-lg bg-slate-900 px-6 py-4 shadow-xl shadow-blue-500/20 hover:bg-slate-700 md:w-5/12"
             onClick={() =>
               handleClick("https://github.com/jolbol1/RandomCoordinatesV2")
             }
@@ -148,7 +148,7 @@ export const ProjectTree = () => {
               )
             }
           >
-            <h3 class="mb-3 font-bold text-white text-xl">RandomCoordinates</h3>
+            <h3 class="mb-3 text-xl font-bold text-white">RandomCoordinates</h3>
             <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">
               A Minecraft plugin to teleport users to random locations. Includes
               a dive into the flaws of randomness in computing, lots of
@@ -166,9 +166,9 @@ export const ProjectTree = () => {
           onKeyPress={(e) =>
             handleKeyPress(e, "https://github.com/jolbol1?tab=repositories")
           }
-          class="order-1 bg-cyan-900 hover:bg-cyan-600 cursor-pointer rounded-lg shadow-xl md:w-5/12 px-6 py-4 mx-auto mt-12"
+          class="order-1 mx-auto mt-12 cursor-pointer rounded-lg bg-cyan-900 px-6 py-4 shadow-xl hover:bg-cyan-600 md:w-5/12"
         >
-          <h3 class="font-bold text-white text-xl text-center">
+          <h3 class="text-center text-xl font-bold text-white">
             View More on GitHub
           </h3>
         </div>

@@ -32,14 +32,14 @@ const AboutMe = () => {
   return (
     <>
       <SEO />
-      <main className="text-white custom-gradient pb-24">
+      <main className="custom-gradient pb-24 text-white">
         <title>About Me</title>
         <div>
-          <h1 className="text-5xl lg:text-7xl font-bold header-text mb-3 text-center pt-24">
+          <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
             About Me
           </h1>
           <article
-            className="relative prose lg:prose-xl prose-invert w-5/6 xl:w-3/4 max-w-none mx-auto m-3 shadow-blue-500/50 shadow-2xl bg-slate-900 rounded-xl h-fit mt-16 p-6"
+            className="prose lg:prose-xl prose-invert relative m-3 mx-auto mt-16 h-fit w-5/6 max-w-none rounded-xl bg-slate-900 p-6 shadow-2xl shadow-blue-500/50 xl:w-3/4"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
