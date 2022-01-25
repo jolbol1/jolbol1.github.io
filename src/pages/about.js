@@ -31,7 +31,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <SEO />
+      <SEO title={"About Me | James Shopland"} desc={"I am a software engineer. Currently working at a finance firm developing in house solutions using React, .NET, C#, and SQL. Read more about me here."} pathname={"/about"}/>
       <main className="custom-gradient pb-24 text-white">
         <title>About Me</title>
         <div>

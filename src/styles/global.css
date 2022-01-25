@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hides first line of the github profile */
+#helloguys {
+  display: none;
+}
 
 .nav-icons > svg {
   height: 100%;

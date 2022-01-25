@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "gatsby";
@@ -93,6 +93,19 @@ export default function NavBar({ uri }) {
     },
   ]);
 
+  const listenToScroll = useCallback(() => {
+    let heightToHideFrom = 200;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      !isVisible && // to limit setting state only the first time
+        setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [isVisible]);
+
   useEffect(() => {
     let updatedNav = navigation.map((page, index) => {
       if (uri == null && page.href === "/") {
@@ -105,7 +118,7 @@ export default function NavBar({ uri }) {
     });
 
     setNavigation(updatedNav);
-  }, [uri]);
+  }, [uri, navigation]);
 
   useEffect(() => {
     if (uri == null || uri === "/") {
@@ -123,25 +136,14 @@ export default function NavBar({ uri }) {
     }
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
-  }, [showOnScroll]);
+  }, [showOnScroll, listenToScroll]);
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
+  }, [listenToScroll]);
 
-  const listenToScroll = () => {
-    let heightToHideFrom = 200;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
 
-    if (winScroll > heightToHideFrom) {
-      !isVisible && // to limit setting state only the first time
-        setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
 
 
   return (
@@ -170,6 +172,7 @@ export default function NavBar({ uri }) {
                           <a
                             key={item.name}
                             href={item.href}
+                            rel="noreferrer"
                             target="_blank"
                             className={
                               "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
