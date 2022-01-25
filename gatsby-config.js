@@ -22,6 +22,7 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",

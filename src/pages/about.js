@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useStaticQuery } from "gatsby";
-import { ParticlesContainer } from "../components/ParticlesContainer";
 import { graphql } from "gatsby";
 import showdown from "showdown";
 import SEO from "../components/SEO/SEO";
@@ -33,7 +32,6 @@ const AboutMe = () => {
   return (
     <>
       <SEO />
-      <ParticlesContainer></ParticlesContainer>
       <main className="text-white custom-gradient pb-24">
         <title>About Me</title>
         <div>
