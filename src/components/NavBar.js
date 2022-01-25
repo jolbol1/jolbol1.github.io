@@ -117,8 +117,6 @@ export default function NavBar({ uri }) {
     }
   }, [uri]);
 
-  // navigation[pageNumber].current = true;
-
   useEffect(() => {
     if (!showOnScroll) {
       return;
@@ -126,6 +124,11 @@ export default function NavBar({ uri }) {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
   }, [showOnScroll]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
 
   const listenToScroll = () => {
     let heightToHideFrom = 200;
@@ -140,9 +143,10 @@ export default function NavBar({ uri }) {
     }
   };
 
+
   return (
-    isVisible && (
-      <Disclosure as="nav" className="theme-color">
+    (
+      <Disclosure as="nav" className={`theme-color ${!isVisible && 'hidden'}`}>
         {({ open }) => (
           <>
             <div className="w-5/6 px-3 sm:mx-auto sm:px-0 xl:w-3/4 ">
@@ -208,8 +212,11 @@ export default function NavBar({ uri }) {
             </div>
 
             <Disclosure.Panel className="sm:hidden">
+            {({ close }) => (
+
               <div className="space-y-1 px-2 pt-2 pb-3">
                 {navigation.map((item) => (
+                  item.externalLink ? 
                   <Disclosure.Button
                     key={item.name}
                     as="a"
@@ -224,12 +231,28 @@ export default function NavBar({ uri }) {
                   >
                     {item.name}
                   </Disclosure.Button>
+                  :
+                  <Link
+                  key={item.name}
+                  to={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                  onClick={close}
+                >
+                  {item.name}
+                </Link>
                 ))}
               </div>
+              )}
             </Disclosure.Panel>
           </>
         )}
       </Disclosure>
-    )
+     )
   );
 }

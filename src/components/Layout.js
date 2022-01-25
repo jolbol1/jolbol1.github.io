@@ -1,19 +1,26 @@
 import React from "react";
 import NavBar from "./NavBar";
+import { withPrefix } from "gatsby"
+
 
 export default function Layout({ children, uri }) {
-  const handleScript = () => {
-    loadStars();
+  const cdnScriptLoaded = () => {
+    const startScript = document.createElement("script")
+    startScript.id = "stars-js"
+    startScript.src = withPrefix("/stars.min.js")
+    document.body.appendChild(startScript)
   };
 
   React.useEffect(() => {
     const script = document.createElement("script");
-    script.addEventListener("load", handleScript);
+    script.addEventListener("load", cdnScriptLoaded);
     script.src =
       "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.39.0/tsparticles.slim.min.js";
     script.defer = true;
     document.body.appendChild(script);
   }, []);
+
+
 
   return (
     <>
