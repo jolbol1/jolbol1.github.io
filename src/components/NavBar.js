@@ -99,10 +99,10 @@ export default function NavBar({ uri }) {
       document.body.scrollTop || document.documentElement.scrollTop;
 
     if (winScroll > heightToHideFrom) {
-      !isVisible && // to limit setting state only the first time
-        setIsVisible(true);
+      !isVisible && setIsVisible(true);
     } else {
-      setIsVisible(false);
+      isVisible && setIsVisible(false);
+
     }
   }, [isVisible]);
 
@@ -132,6 +132,8 @@ export default function NavBar({ uri }) {
 
   useEffect(() => {
     if (!showOnScroll) {
+      window.removeEventListener("scroll", listenToScroll);
+      !isVisible && setIsVisible(true);
       return;
     }
     window.addEventListener("scroll", listenToScroll);
