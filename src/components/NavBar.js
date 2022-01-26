@@ -138,13 +138,6 @@ export default function NavBar({ uri }) {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, [showOnScroll, listenToScroll]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, [listenToScroll]);
-
-
-
 
   return (
     (
