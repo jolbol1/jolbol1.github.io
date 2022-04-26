@@ -10,9 +10,9 @@ export const IntroHero = () => {
         James Shopland
       </h1>
       <h2 className="mb-3 font-bold md:mb-0 md:text-xl">
-        Junior Software Developer | Surrey, UK
+        Software Engineer | Surrey, UK
       </h2>
-      <h3>C# | .NET | React | Redux | JavaScript | HTML | CSS | and more...</h3>
+      <h3>C# | .NET | React | Redux | JavaScript | HTML | CSS | Azure | and more...</h3>
     </div>
   );
 };

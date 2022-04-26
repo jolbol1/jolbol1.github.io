@@ -9,10 +9,9 @@ export const TextContainer = () => {
           <span className="underline">Career</span> 💼
         </h4>
         <p className="text-justify text-base md:text-lg	">
-          I am a junior software developer currently working for a medium sized
-          finance firm, developing in house apps to improve workflows. I have
-          skills in developing CRUD apps with .NET, Building OfficeJS add-ins
-          and full-stack web design.
+          I am a software engineer currently working for a leading systems, engineering and technology company in the Cloud Technologies department.
+          Previosuly worked for a medium sized finance firm, developing in house apps to improve workflows. 
+          I have skills in developing CRUD apps with .NET, Building OfficeJS add-ins and full-stack web design.
         </p>
         <br />
         <h4 className="text-center text-xl font-bold">
