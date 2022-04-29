@@ -141,8 +141,6 @@ export const SkillsComponent = () => {
         </svg>
         <p>Git</p>
       </div>
-      <div></div>
-      <div></div>
     </div>
   );
 };
