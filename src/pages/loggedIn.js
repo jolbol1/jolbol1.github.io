@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 const LoggedInPage = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  const [userName, setUsername] = useState("anon");
 
   useEffect(() => {
     fetch(`/.auth/me`)
       .then((response) => response.json()) 
       .then((resultData) => {
-        setUserInfo(resultData);
+        setUsername(resultData.clientPrincipal.userDetails);
+        console.log(`got here with a principal of ${resultData}`)
       }); 
   }, []);
 
@@ -17,7 +18,9 @@ const LoggedInPage = () => {
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
         Logged in successfully.
       </h1>
-      <p>{userInfo}</p>
+      <h2 className="mb-3 pt-12 text-center text-3xl font-bold lg:text-5xl">
+        {userName}
+      </h2>
       <div className="flex w-full justify-center pt-12 ">
         <Link
           key="home"
