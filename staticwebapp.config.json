@@ -1,31 +1,43 @@
 {
-    "routes": [
-      {
-        "route": "/login",
-        "rewrite": "/.auth/login/github?post_login_redirect_uri=https://www.jamesshopland.cloud/loggedin"
-      },
-      {
-        "route": "/logout",
-        "redirect": "/.auth/logout"
-      },
-      {
-        "route": "/loggedIn",
-        "allowedRoles": ["authenticated"]
-      }
-    ],
-    "responseOverrides": {
-      "400": {
-        "rewrite": "/index.html"
-      },
-      "401": {
-        "redirect": "/login",
-        "statusCode": 302
-      },
-      "403": {
-        "rewrite": "/index.html"
-      },
-      "404": {
-        "rewrite": "/404.html"
+  "networking": {
+    "allowedIpRanges": ["AzureFrontDoor.Backend"]
+  },
+  "forwardingGateway": {
+    "requiredHeaders": {
+      "X-Azure-FDID": "419698b6-af8b-479f-8aa0-2e465ddda39a"
+    },
+    "allowedForwardedHosts": ["jamesshopland.cloud"]
+  },
+  "routes": [
+    {
+      "route": "/login",
+      "rewrite": "/.auth/login/github?post_login_redirect_uri=https://www.jamesshopland.cloud/loggedIn"
+    },
+    {
+      "route": "/logout",
+      "redirect": "/.auth/logout"
+    },
+    {
+      "route": "/loggedIn",
+      "allowedRoles": ["authenticated, members"],
+      "headers": {
+        "Cache-Control": "no-store"
       }
     }
+  ],
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/index.html"
+    },
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    },
+    "403": {
+      "rewrite": "/index.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
+    }
   }
+}

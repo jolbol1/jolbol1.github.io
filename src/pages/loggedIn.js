@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 const LoggedInPage = () => {
-  const [userName, setUsername] = useState("anon");
+  const [userName, setUsername] = useState("Loading Profile...");
 
   useEffect(() => {
     fetch(`/.auth/me`)
       .then((response) => response.json()) 
       .then((resultData) => {
         setUsername(resultData.clientPrincipal.userDetails);
-        console.log(`got here with a principal of ${resultData}`)
       }); 
   }, []);
 
