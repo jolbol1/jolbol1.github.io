@@ -61,7 +61,6 @@ export default function NavBar({ uri }) {
   const [isVisible, setIsVisible] = useState(false);
   const [userName, setUserName] = useState("");
   const [showOnScroll, setShowOnScroll] = useState(true);
-  const [redirect, setRedirect] = useState("/")
   const [navigation, setNavigation] = useState([
     { name: "Home", href: "/", current: false },
     { name: "More Info", href: "/about", current: false },
@@ -142,11 +141,12 @@ export default function NavBar({ uri }) {
   }, [showOnScroll, listenToScroll]);
 
   useEffect(() => {
-    setRedirect(window.location.pathname)
     fetch(`/.auth/me`)
       .then((response) => response.json())
       .then((resultData) => {
-        setUserName(resultData.clientPrincipal.userDetails);
+        if (resultData.clientPrincipal) {
+          setUserName(resultData.clientPrincipal.userDetails);
+        }
       });
   }, []);
 
@@ -209,14 +209,16 @@ export default function NavBar({ uri }) {
                     )}
                   </div>
                 </div>
-                <div className="hidden sm:flex flex flex-row space-x-4 items-center">
-                  <div class="text-white font-bold">
-                    {userName}
-                  </div>
+                <div className="flex hidden flex-row items-center space-x-4 sm:flex">
+                  <div class="font-bold text-white">{userName}</div>
                   <a
                     key={userName ? "Log Out" : "Log In"}
-                    href={userName ? "/logout" : `/login??post_login_redirect_uri=${redirect}`}
-                    className="text-white text-sm font-bold"
+                    href={
+                      userName
+                        ? "/logout"
+                        : `/login??post_login_redirect_uri=${uri}`
+                    }
+                    className="text-sm font-bold text-white"
                   >
                     {userName ? "Log Out" : "Log In"}
                   </a>
