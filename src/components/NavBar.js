@@ -165,7 +165,7 @@ export default function NavBar({ uri }) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start content-between">
+              <div className="flex flex-1 items-center justify-between sm:items-stretch sm:justify-between">
                 <div className="hidden sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) =>
@@ -207,14 +207,14 @@ export default function NavBar({ uri }) {
                     )}
                   </div>
                 </div>
-                <div className="hidden sm:block">
+                <div className="hidden sm:block flex flex-row items-center">
                   <div class="text-white font-bold">
                     {userName}
                   </div>
                   <Link
                     key={userName ? "Log Out" : "Log In"}
-                    to="/.auth/login/github"
-                    className="hover:text-white text-sm font-bold text-slate-900"
+                    to={userName ? "/logout" : "/login"}
+                    className="text-white text-sm font-bold"
                   >
                     {userName ? "Log Out" : "Log In"}
                   </Link>
