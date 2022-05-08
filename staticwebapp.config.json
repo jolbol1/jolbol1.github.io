@@ -21,7 +21,7 @@
       "rewrite": "/index.html"
     },
     "401": {
-      "redirect": "/.auth/login/github?post_login_redirect_uri=.referrer",
+      "redirect": "/.auth/login/github",
       "statusCode": 302
     },
     "403": {

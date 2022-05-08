@@ -61,6 +61,7 @@ export default function NavBar({ uri }) {
   const [isVisible, setIsVisible] = useState(false);
   const [userName, setUserName] = useState("");
   const [showOnScroll, setShowOnScroll] = useState(true);
+  const [redirect, setRedirect] = useState("/")
   const [navigation, setNavigation] = useState([
     { name: "Home", href: "/", current: false },
     { name: "More Info", href: "/about", current: false },
@@ -141,6 +142,7 @@ export default function NavBar({ uri }) {
   }, [showOnScroll, listenToScroll]);
 
   useEffect(() => {
+    setRedirect(window.location.pathname)
     fetch(`/.auth/me`)
       .then((response) => response.json())
       .then((resultData) => {
@@ -213,7 +215,7 @@ export default function NavBar({ uri }) {
                   </div>
                   <a
                     key={userName ? "Log Out" : "Log In"}
-                    href={userName ? "/logout" : "/login"}
+                    href={userName ? "/logout" : `/login??post_login_redirect_uri=${redirect}`}
                     className="text-white text-sm font-bold"
                   >
                     {userName ? "Log Out" : "Log In"}
