@@ -207,17 +207,17 @@ export default function NavBar({ uri }) {
                     )}
                   </div>
                 </div>
-                <div className="hidden sm:block flex flex-row items-center">
+                <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                   <div class="text-white font-bold">
                     {userName}
                   </div>
-                  <Link
+                  <a
                     key={userName ? "Log Out" : "Log In"}
-                    to={userName ? "/logout" : "/login"}
+                    href={userName ? "/logout" : "/login"}
                     className="text-white text-sm font-bold"
                   >
                     {userName ? "Log Out" : "Log In"}
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
