@@ -59,6 +59,7 @@ const email = (
 
 export default function NavBar({ uri }) {
   const [isVisible, setIsVisible] = useState(false);
+  const [userName, setUserName] = useState("");
   const [showOnScroll, setShowOnScroll] = useState(true);
   const [navigation, setNavigation] = useState([
     { name: "Home", href: "/", current: false },
@@ -102,7 +103,6 @@ export default function NavBar({ uri }) {
       !isVisible && setIsVisible(true);
     } else {
       isVisible && setIsVisible(false);
-
     }
   }, [isVisible]);
 
@@ -140,117 +140,130 @@ export default function NavBar({ uri }) {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, [showOnScroll, listenToScroll]);
 
+  useEffect(() => {
+    fetch(`/.auth/me`)
+      .then((response) => response.json())
+      .then((resultData) => {
+        setUserName(resultData.clientPrincipal.userDetails);
+      });
+  }, []);
 
   return (
-    (
-      <Disclosure as="nav" className={`theme-color ${!isVisible && 'hidden'}`}>
-        {({ open }) => (
-          <>
-            <div className="w-5/6 px-3 sm:mx-auto sm:px-0 xl:w-3/4 ">
-              <div className="relative flex h-16 items-center justify-between">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  {/* Mobile menu button*/}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+    <Disclosure as="nav" className={`theme-color ${!isVisible && "hidden"}`}>
+      {({ open }) => (
+        <>
+          <div className="w-5/6 px-3 sm:mx-auto sm:px-0 xl:w-3/4 ">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start content-between">
+                <div className="hidden sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) =>
+                      item.externalLink ? (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          rel="noreferrer"
+                          target="_blank"
+                          className={
+                            "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
+                          }
+                        >
+                          {item.icon ? (
+                            <div className="nav-icons h-6 w-6">{item.icon}</div>
+                          ) : (
+                            item.name
+                          )}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={classNames(
+                            item.current
+                              ? "bg-cyan-300 "
+                              : " bg-cyan-500 hover:bg-gray-700 hover:text-white",
+                            "rounded-md px-6 py-2 text-sm font-bold text-slate-900"
+                          )}
+                          aria-current={item.current ? "page" : undefined}
+                        >
+                          {item.icon ? (
+                            <div className="nav-icons h-6 w-6">{item.icon}</div>
+                          ) : (
+                            item.name
+                          )}
+                        </Link>
+                      )
                     )}
-                  </Disclosure.Button>
-                </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div className="hidden sm:block">
-                    <div className="flex space-x-4">
-                      {navigation.map((item) =>
-                        item.externalLink ? (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            rel="noreferrer"
-                            target="_blank"
-                            className={
-                              "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
-                            }
-                          >
-                            {item.icon ? (
-                              <div className="nav-icons h-6 w-6">
-                                {item.icon}
-                              </div>
-                            ) : (
-                              item.name
-                            )}
-                          </a>
-                        ) : (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className={classNames(
-                              item.current
-                                ? "bg-cyan-300 "
-                                : " bg-cyan-500 hover:bg-gray-700 hover:text-white",
-                              "rounded-md px-6 py-2 text-sm font-bold text-slate-900"
-                            )}
-                            aria-current={item.current ? "page" : undefined}
-                          >
-                            {item.icon ? (
-                              <div className="nav-icons h-6 w-6">
-                                {item.icon}
-                              </div>
-                            ) : (
-                              item.name
-                            )}
-                          </Link>
-                        )
-                      )}
-                    </div>
                   </div>
+                </div>
+                <div className="hidden sm:block">
+                  <div class="text-white font-bold">
+                    {userName}
+                  </div>
+                  <Link
+                    key={userName ? "Log Out" : "Log In"}
+                    to="/.auth/login/github"
+                    className="hover:text-white text-sm font-bold text-slate-900"
+                  >
+                    {userName ? "Log Out" : "Log In"}
+                  </Link>
                 </div>
               </div>
             </div>
+          </div>
 
-            <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="sm:hidden">
             {({ close }) => (
-
               <div className="space-y-1 px-2 pt-2 pb-3">
-                {navigation.map((item) => (
-                  item.externalLink ? 
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block rounded-md px-3 py-2 text-base font-medium"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                  :
-                  <Link
-                  key={item.name}
-                  to={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                  onClick={close}
-                >
-                  {item.name}
-                </Link>
-                ))}
+                {navigation.map((item) =>
+                  item.externalLink ? (
+                    <Disclosure.Button
+                      key={item.name}
+                      as="a"
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
+                      )}
+                      aria-current={item.current ? "page" : undefined}
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
+                      )}
+                      aria-current={item.current ? "page" : undefined}
+                      onClick={close}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                )}
               </div>
-              )}
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-     )
+            )}
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 }
