@@ -2,11 +2,11 @@
   "routes": [
     {
       "route": "/login",
-      "rewrite": "/.auth/login/github"
+      "rewrite": "/.auth/login/github?post_login_redirect_uri=.referrer"
     },
     {
       "route": "/logout",
-      "redirect": "/.auth/logout"
+      "redirect": "/.auth/logout?post_logout_redirect_uri=.referrer"
     },
     {
       "route": "/loggedIn",
