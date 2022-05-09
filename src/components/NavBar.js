@@ -215,10 +215,12 @@ export default function NavBar({ uri }) {
                     key={userName ? "Log Out" : "Log In"}
                     href={
                       userName
-                        ? "/logout"
+                        ? "/logout?post_logout_redirect_uri=${uri}"
                         : `/login?post_login_redirect_uri=${uri}`
                     }
-                    className="text-sm font-bold text-white"
+                    className={
+                      "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
+                    }
                   >
                     {userName ? "Log Out" : "Log In"}
                   </a>
