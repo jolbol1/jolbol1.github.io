@@ -61,7 +61,7 @@ export default function NavBar({ uri }) {
   const [isVisible, setIsVisible] = useState(false);
   const [userName, setUserName] = useState("");
   const [showOnScroll, setShowOnScroll] = useState(true);
-  const [redirect, setRedirect] = useState("/")
+  const [redirect, setRedirect] = useState("/");
   const [navigation, setNavigation] = useState([
     { name: "Home", href: "/", current: false },
     { name: "More Info", href: "/about", current: false },
@@ -118,8 +118,7 @@ export default function NavBar({ uri }) {
       }
     });
     setNavigation(updatedNav);
-    console.log(uri)
-    setRedirect(uri)
+    setRedirect(uri);
   }, [uri]);
 
   useEffect(() => {
@@ -130,13 +129,7 @@ export default function NavBar({ uri }) {
       setShowOnScroll(false);
       setIsVisible(true);
     }
-    console.log(uri)
   }, [uri]);
-
-
-  useEffect(() => {
-    console.log(redirect)
-  }, [redirect])
 
   useEffect(() => {
     if (!showOnScroll) {
