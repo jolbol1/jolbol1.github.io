@@ -116,7 +116,6 @@ export default function NavBar({ uri }) {
         return { ...page, current: false };
       }
     });
-
     setNavigation(updatedNav);
   }, [uri, navigation]);
 
@@ -215,8 +214,8 @@ export default function NavBar({ uri }) {
                     key={userName ? "Log Out" : "Log In"}
                     href={
                       userName
-                        ? "/logout?post_logout_redirect_uri=${uri}"
-                        : `/login?post_login_redirect_uri=${uri}`
+                        ? `/logout?post_logout_redirect_uri=${window.location.pathname}`
+                        : `/login?post_login_redirect_uri=${window.location.pathname}`
                     }
                     className={
                       "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
