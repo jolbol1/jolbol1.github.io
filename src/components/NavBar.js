@@ -61,6 +61,7 @@ export default function NavBar({ uri }) {
   const [isVisible, setIsVisible] = useState(false);
   const [userName, setUserName] = useState("");
   const [showOnScroll, setShowOnScroll] = useState(true);
+  const [redirect, setRedirect] = useState(uri);
   const [navigation, setNavigation] = useState([
     { name: "Home", href: "/", current: false },
     { name: "More Info", href: "/about", current: false },
@@ -123,9 +124,11 @@ export default function NavBar({ uri }) {
     if (uri == null || uri === "/") {
       setShowOnScroll(true);
       setIsVisible(false);
+      setRedirect(uri)
     } else {
       setShowOnScroll(false);
       setIsVisible(true);
+      setRedirect(uri)
     }
   }, [uri]);
 
@@ -214,8 +217,8 @@ export default function NavBar({ uri }) {
                     key={userName ? "Log Out" : "Log In"}
                     href={
                       userName
-                        ? `/logout?post_logout_redirect_uri=${uri}`
-                        : `/login?post_login_redirect_uri=${uri}`
+                        ? `/logout?post_logout_redirect_uri=${redirect}`
+                        : `/login?post_login_redirect_uri=${redirect}`
                     }
                     className={
                       "flex items-center justify-center rounded-md bg-cyan-500 px-6 text-sm font-bold text-slate-900 hover:bg-gray-700 hover:text-white"
