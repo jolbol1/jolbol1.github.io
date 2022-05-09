@@ -216,7 +216,7 @@ export default function NavBar({ uri }) {
                     href={
                       userName
                         ? "/logout"
-                        : `/login??post_login_redirect_uri=${uri}`
+                        : `/login?post_login_redirect_uri=${uri}`
                     }
                     className="text-sm font-bold text-white"
                   >
