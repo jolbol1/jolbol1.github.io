@@ -15,7 +15,7 @@ const LoggedInPage = () => {
   return (
     <main className="theme-color h-screen text-white">
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
-        Logged in successfully.
+        Logged in successfully - AzureDev.
       </h1>
       <h2 className="mb-3 pt-12 text-center text-3xl font-bold lg:text-5xl">
         {userName}
