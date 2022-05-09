@@ -118,6 +118,7 @@ export default function NavBar({ uri }) {
       }
     });
     setNavigation(updatedNav);
+    setRedirect(uri)
   }, [uri, navigation]);
 
   useEffect(() => {
