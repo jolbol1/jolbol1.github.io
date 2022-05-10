@@ -43,9 +43,12 @@ const LoggedInPage = () => {
         className="mx-auto my-4 w-1/2 rounded bg-slate-600 px-8 pt-6 pb-8 shadow-md"
       >
         <div class="mb-4">
-          <textarea onChange={handleChange}
+          <input onChange={handleChange}
             value={textarea}
-            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+            maxLength="35"
+            pattern="[a-zA-Z0-9\s]+"
+            placeholder="Send the LCD dipslay a message!"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <button
