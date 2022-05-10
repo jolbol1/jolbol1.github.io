@@ -18,6 +18,10 @@
       "redirect": "/.auth/logout"
     },
     {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/loggedIn",
       "allowedRoles": ["authenticated", "members"],
       "headers": {
