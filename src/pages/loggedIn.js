@@ -40,7 +40,7 @@ const LoggedInPage = () => {
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="mx-auto mb-4 w-1/2 rounded bg-slate-600 px-8 pt-6 pb-8 shadow-md"
+        className="mx-auto my-4 w-1/2 rounded bg-slate-600 px-8 pt-6 pb-8 shadow-md"
       >
         <div class="mb-4">
           <textarea onChange={handleChange}
