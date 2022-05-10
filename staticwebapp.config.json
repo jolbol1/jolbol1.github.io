@@ -1,13 +1,4 @@
 {
-  "networking": {
-    "allowedIpRanges": ["AzureFrontDoor.Backend"]
-  },
-  "forwardingGateway": {
-    "requiredHeaders": {
-      "X-Azure-FDID": "419698b6-af8b-479f-8aa0-2e465ddda39a"
-    },
-    "allowedForwardedHosts": ["jamesshopland.cloud", "www.jamesshopland.cloud"]
-  },
   "routes": [
     {
       "route": "/login",
