@@ -9,6 +9,9 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Line } from "react-chartjs-2";
+
+
 const LoggedInPage = () => {
   const [userName, setUsername] = useState("Loading Profile...");
   const [labels, setLabels] = useState([]);
