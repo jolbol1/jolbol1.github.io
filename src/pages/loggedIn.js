@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import 'chartjs-adapter-moment';
 import {
   Chart as ChartJS,
   TimeScale,
