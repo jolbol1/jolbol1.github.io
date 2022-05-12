@@ -16,12 +16,6 @@
     {
       "route": "/logout",
       "redirect": "/.auth/logout"
-    },
-    {
-      "route": "/api/*",
-      "headers": {
-        "Cache-Control": "must-revalidate, max-age=300, s-maxage=300"
-      }
     }
   ],
   "responseOverrides": {
