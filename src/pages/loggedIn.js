@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
-import { Line } from "react-chartjs-2";
-
+import {
+  Chart as ChartJS,
+  TimeScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 const LoggedInPage = () => {
   const [userName, setUsername] = useState("Loading Profile...");
   const [labels, setLabels] = useState([]);
