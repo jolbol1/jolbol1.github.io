@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Decimation
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -19,7 +20,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Decimation
 );
 
 const LoggedInPage = () => {
@@ -47,8 +49,15 @@ const LoggedInPage = () => {
       });
   };
 
+  const decimation = {
+    enabled: true,
+    algorithm: 'lttb',
+  };
+
   const options = {
     responsive: true,
+    animation: false,
+    parsing: false,
     interaction: {
       mode: "index",
       intersect: false,
@@ -59,6 +68,7 @@ const LoggedInPage = () => {
         display: true,
         text: "Weather Readings",
       },
+      decimation: decimation
     },
     scales: {
       x: {
