@@ -100,7 +100,6 @@ const LoggedInPage = () => {
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         yAxisID: "y",
         pointRadius: 0,
-        tension: 0.3
 
       },
       {
@@ -110,7 +109,6 @@ const LoggedInPage = () => {
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         yAxisID: "y1",
         pointRadius: 0,
-        tension: 0.3
       },
     ],
   };
