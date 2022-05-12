@@ -93,6 +93,7 @@ export default function NavBar({ uri }) {
       icon: email,
       externalLink: true,
     },
+    { name: "Weather", href: "/weather", current: false },
   ]);
 
   const listenToScroll = useCallback(() => {

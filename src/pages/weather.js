@@ -24,20 +24,14 @@ ChartJS.register(
   Decimation
 );
 
-const LoggedInPage = () => {
-  const [userName, setUsername] = useState("Loading Profile...");
+const WeatherPage = () => {
   const [labels, setLabels] = useState([]);
   const [temperature, setTemperature] = useState([]);
   const [humidity, setHumidity] = useState([]);
 
   useEffect(() => {
-    fetch(`/.auth/me`)
-      .then((response) => response.json())
-      .then((resultData) => {
-        setUsername(resultData.clientPrincipal.userDetails);
-      });
     loadApiData();
-  }, []);
+  }, [])
 
   const loadApiData = () => {
     fetch("/api/WeatherApi")
@@ -116,14 +110,11 @@ const LoggedInPage = () => {
   return (
     <main className="theme-color pb-12 text-white">
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
-        Logged in successfully - AzureDev.
+        Temperature And Humidity
       </h1>
-      <h2 className="mb-3 pt-12 text-center text-3xl font-bold lg:text-5xl">
-        {userName}
-      </h2>
       <Line data={data} options={options} />
     </main>
   );
 };
 
-export default LoggedInPage;
+export default WeatherPage;
