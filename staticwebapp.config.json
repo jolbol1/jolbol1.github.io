@@ -20,7 +20,7 @@
     {
       "route": "/api/*",
       "headers": {
-        "cache-control": "must-revalidate, max-age=300"
+        "Cache-Control": "must-revalidate, max-age=300, s-maxage=300"
       }
     }
   ],
