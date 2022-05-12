@@ -108,7 +108,7 @@ const WeatherPage = () => {
   };
 
   return (
-    <main className="theme-color pb-12 text-white">
+    <main className="theme-color pb-12 text-white min-h-screen">
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
         Temperature And Humidity
       </h1>
