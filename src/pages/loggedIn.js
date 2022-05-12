@@ -12,6 +12,15 @@ import {
 } from 'chart.js';
 import { Line } from "react-chartjs-2";
 
+ChartJS.register(
+  TimeScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const LoggedInPage = () => {
   const [userName, setUsername] = useState("Loading Profile...");
