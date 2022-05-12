@@ -56,8 +56,6 @@ const LoggedInPage = () => {
 
   const options = {
     responsive: true,
-    animation: false,
-    parsing: false,
     interaction: {
       mode: "index",
       intersect: false,
