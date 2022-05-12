@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import 'chartjs-adapter-moment';
+import "chartjs-adapter-moment";
 import {
   Chart as ChartJS,
   TimeScale,
@@ -9,7 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(
@@ -38,51 +38,51 @@ const LoggedInPage = () => {
   }, []);
 
   const loadApiData = () => {
-    fetch('/api/WeatherApi')
-    .then(response => response.json())
-    .then(data => {
-      setLabels(data.map(i => i.time));
-      setHumidity(data.map(i => i.humidity));
-      setTemperature(data.map(i => i.temperature));
-    });
-  }
+    fetch("/api/WeatherApi")
+      .then((response) => response.json())
+      .then((data) => {
+        setLabels(data.map((i) => i.time));
+        setHumidity(data.map((i) => i.humidity));
+        setTemperature(data.map((i) => i.temperature));
+      });
+  };
 
   const options = {
     responsive: true,
     interaction: {
-      mode: 'index',
+      mode: "index",
       intersect: false,
     },
     stacked: false,
     plugins: {
       title: {
         display: true,
-        text: 'Weather Readings',
+        text: "Weather Readings",
       },
     },
     scales: {
       x: {
-        type: 'time',
+        type: "time",
         time: {
-            unit: 'minute'
-        }
+          unit: "minute",
+        },
       },
       y: {
-        type: 'linear' ,
+        type: "linear",
         display: true,
-        position: 'left',
+        position: "left",
         suggestedMin: 15,
-        suggestedMax: 35
+        suggestedMax: 35,
       },
       y1: {
-        type: 'linear',
+        type: "linear",
         display: true,
-        position: 'right',
+        position: "right",
         grid: {
           drawOnChartArea: false,
         },
         suggestedMin: 50,
-        suggestedMax: 90
+        suggestedMax: 90,
       },
     },
   };
@@ -91,21 +91,27 @@ const LoggedInPage = () => {
     labels,
     datasets: [
       {
-        label: 'Celsius',
+        label: "Celsius",
         data: temperature,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        yAxisID: 'y',
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        yAxisID: "y",
+        line: {
+          pointRadius: 0, // disable for all `'line'` datasets
+        },
       },
       {
-        label: 'Humidity',
+        label: "Humidity",
         data: humidity,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        yAxisID: 'y1',
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        yAxisID: "y1",
+        line: {
+          pointRadius: 0, // disable for all `'line'` datasets
+        },
       },
     ],
-  }
+  };
 
   return (
     <main className="theme-color pb-12 text-white">
