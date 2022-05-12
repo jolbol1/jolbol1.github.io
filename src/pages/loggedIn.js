@@ -41,6 +41,11 @@ const LoggedInPage = () => {
       },
     },
     scales: {
+      x: {
+        type: 'time',
+        time: {
+            unit: 'minute'
+        },
       y: {
         type: 'linear' ,
         display: true,
