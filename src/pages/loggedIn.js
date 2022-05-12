@@ -49,10 +49,6 @@ const LoggedInPage = () => {
       });
   };
 
-  const decimation = {
-    enabled: true,
-    algorithm: 'lttb',
-  };
 
   const options = {
     responsive: true,
@@ -66,7 +62,6 @@ const LoggedInPage = () => {
         display: true,
         text: "Weather Readings",
       },
-      decimation: decimation
     },
     scales: {
       x: {
@@ -81,6 +76,7 @@ const LoggedInPage = () => {
         position: "left",
         suggestedMin: 15,
         suggestedMax: 35,
+        tension: 0.3
       },
       y1: {
         type: "linear",
@@ -91,6 +87,7 @@ const LoggedInPage = () => {
         },
         suggestedMin: 50,
         suggestedMax: 90,
+        tension: 0.3
       },
     },
   };
