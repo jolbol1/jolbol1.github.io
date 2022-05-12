@@ -76,7 +76,6 @@ const LoggedInPage = () => {
         position: "left",
         suggestedMin: 15,
         suggestedMax: 35,
-        tension: 0.3
       },
       y1: {
         type: "linear",
@@ -87,7 +86,6 @@ const LoggedInPage = () => {
         },
         suggestedMin: 50,
         suggestedMax: 90,
-        tension: 0.3
       },
     },
   };
@@ -101,7 +99,9 @@ const LoggedInPage = () => {
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         yAxisID: "y",
-        pointRadius: 0
+        pointRadius: 0,
+        tension: 0.3
+
       },
       {
         label: "Humidity",
@@ -109,7 +109,8 @@ const LoggedInPage = () => {
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         yAxisID: "y1",
-        pointRadius: 0
+        pointRadius: 0,
+        tension: 0.3
       },
     ],
   };
