@@ -71,6 +71,8 @@ const LoggedInPage = () => {
         type: 'linear' ,
         display: true,
         position: 'left',
+        suggestedMin: 15,
+        suggestedMax: 35
       },
       y1: {
         type: 'linear',
@@ -79,6 +81,8 @@ const LoggedInPage = () => {
         grid: {
           drawOnChartArea: false,
         },
+        suggestedMin: 50,
+        suggestedMax: 90
       },
     },
   };
@@ -104,7 +108,7 @@ const LoggedInPage = () => {
   }
 
   return (
-    <main className="theme-color h-screen pb-12 text-white">
+    <main className="theme-color pb-12 text-white">
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
         Logged in successfully - AzureDev.
       </h1>
