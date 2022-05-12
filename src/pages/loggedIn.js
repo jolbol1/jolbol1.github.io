@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
+import { Line } from "react-chartjs-2";
 
 const LoggedInPage = () => {
   const [userName, setUsername] = useState("Loading Profile...");
-  const [textarea, setTextarea] = useState("");
-
-  const handleChange = (event) => {
-    setTextarea(event.target.value);
-  };
+  const [labels, setLabels] = useState([]);
+  const [temperature, setTemperature] = useState([]);
+  const [humidity, setHumidity] = useState([]);
 
   useEffect(() => {
     fetch(`/.auth/me`)
@@ -15,20 +14,68 @@ const LoggedInPage = () => {
       .then((resultData) => {
         setUsername(resultData.clientPrincipal.userDetails);
       });
+    loadApiData();
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let data = { message:  textarea};
-
-    fetch("/api/Cloud2Device", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Request complete! response:", res);
+  const loadApiData = () => {
+    fetch('/api/WeatherApi')
+    .then(response => response.json())
+    .then(data => {
+      setLabels(data.map(i => i.time));
+      setHumidity(data.map(i => i.humidity));
+      setTemperature(data.map(i => i.temperature));
     });
+  }
+
+  const options = {
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    stacked: false,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Weather Readings',
+      },
+    },
+    scales: {
+      y: {
+        type: 'linear' ,
+        display: true,
+        position: 'left',
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        grid: {
+          drawOnChartArea: false,
+        },
+      },
+    },
   };
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Celsius',
+        data: temperature,
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        yAxisID: 'y',
+      },
+      {
+        label: 'Humidity',
+        data: humidity,
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        yAxisID: 'y1',
+      },
+    ],
+  }
 
   return (
     <main className="theme-color h-screen pb-12 text-white">
@@ -38,26 +85,7 @@ const LoggedInPage = () => {
       <h2 className="mb-3 pt-12 text-center text-3xl font-bold lg:text-5xl">
         {userName}
       </h2>
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto my-4 w-1/2 rounded bg-slate-600 px-8 pt-6 pb-8 shadow-md"
-      >
-        <div class="mb-4">
-          <input onChange={handleChange}
-            value={textarea}
-            maxLength="35"
-            pattern="[a-zA-Z0-9\s]+"
-            placeholder="Send the LCD dipslay a message!"
-            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <button
-          class=" focus:shadow-outline w-full rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
-          type="submit"
-        >
-          Send Message
-        </button>
-      </form>
+      <Line data={data} options={options} />
     </main>
   );
 };
