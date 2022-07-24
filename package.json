@@ -13,7 +13,11 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && echo 'jamesshopland.com' > ./public/CNAME && gh-pages -d public"
+    "deploy": "gatsby build && echo 'jamesshopland.com' > ./public/CNAME && gh-pages -d public",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write .",
+    "lint": "npx eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.2",
@@ -46,8 +50,25 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.0",
+    "cz-emoji-conventional": "^1.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.1",
     "gh-pages": "^3.2.3",
-    "prettier": "^2.5.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.3"
+  },
+  "lint-staged": {
+    "*.{css,less,scss,html,json,jsx,js}": [
+      "prettier --write ."
+    ],
+    "*.js": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji-conventional"
+    }
   }
 }

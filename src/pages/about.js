@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useStaticQuery } from "gatsby";
-import { graphql } from "gatsby";
-import showdown from "showdown";
-import SEO from "../components/SEO/SEO";
+import * as React from 'react'
+import { useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
+import showdown from 'showdown'
+import SEO from '../components/SEO/SEO'
 
 // markup
 const AboutMe = () => {
@@ -21,17 +21,23 @@ const AboutMe = () => {
           }
         }
       }
-    `
-  );
+    `,
+  )
 
-  const readme = data.allGithubData.nodes[0].data.repository.object.text;
+  const readme = data.allGithubData.nodes[0].data.repository.object.text
 
   var converter = new showdown.Converter(),
-    html = converter.makeHtml(readme);
+    html = converter.makeHtml(readme)
 
   return (
     <>
-      <SEO title={"About Me | James Shopland"} desc={"I am a software engineer. Currently working at a finance firm developing in house solutions using React, .NET, C#, and SQL. Read more about me here."} pathname={"/about"}/>
+      <SEO
+        title={'About Me | James Shopland'}
+        desc={
+          'I am a software engineer. Currently working at a finance firm developing in house solutions using React, .NET, C#, and SQL. Read more about me here.'
+        }
+        pathname={'/about'}
+      />
       <main className="custom-gradient pb-24 text-white">
         <title>About Me</title>
         <div>
@@ -39,13 +45,13 @@ const AboutMe = () => {
             About Me
           </h1>
           <article
-            className="prose lg:prose-xl prose-invert relative m-3 mx-auto mt-16 h-fit w-5/6 max-w-none rounded-xl bg-slate-900 p-6 shadow-2xl shadow-blue-500/50 xl:w-3/4"
+            className="prose prose-invert relative m-3 mx-auto mt-16 h-fit w-5/6 max-w-none rounded-xl bg-slate-900 p-6 shadow-2xl shadow-blue-500/50 lg:prose-xl xl:w-3/4"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe

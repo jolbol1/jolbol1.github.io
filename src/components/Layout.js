@@ -1,30 +1,27 @@
-import React from "react";
-import NavBar from "./NavBar";
-import { withPrefix } from "gatsby"
-
+import React from 'react'
+import NavBar from './NavBar'
+import { withPrefix } from 'gatsby'
 
 export default function Layout({ children, uri }) {
   const cdnScriptLoaded = () => {
-    const startScript = document.createElement("script")
-    startScript.id = "stars-js"
-    startScript.src = withPrefix("/stars.min.js")
+    const startScript = document.createElement('script')
+    startScript.id = 'stars-js'
+    startScript.src = withPrefix('/stars.min.js')
     document.body.appendChild(startScript)
-  };
+  }
 
   React.useEffect(() => {
-    const script = document.createElement("script");
-    script.addEventListener("load", cdnScriptLoaded);
+    const script = document.createElement('script')
+    script.addEventListener('load', cdnScriptLoaded)
     script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.39.0/tsparticles.slim.min.js";
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
-
-
+      'https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.39.0/tsparticles.slim.min.js'
+    script.defer = true
+    document.body.appendChild(script)
+  }, [])
 
   return (
     <>
-      <div style={{ position: "fixed", width: "100%", zIndex: 50 }}>
+      <div style={{ position: 'fixed', width: '100%', zIndex: 50 }}>
         <NavBar uri={uri} />
       </div>
       {children}
@@ -38,5 +35,5 @@ export default function Layout({ children, uri }) {
       </footer>
       <div id="tsparticles"></div>
     </>
-  );
+  )
 }
