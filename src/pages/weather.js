@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "chartjs-adapter-moment";
+import React, { useState, useEffect } from 'react'
+import 'chartjs-adapter-moment'
 import {
   Chart as ChartJS,
   TimeScale,
@@ -9,9 +9,9 @@ import {
   Title,
   Tooltip,
   Legend,
-  Decimation
-} from "chart.js";
-import { Line } from "react-chartjs-2";
+  Decimation,
+} from 'chart.js'
+import { Line } from 'react-chartjs-2'
 
 ChartJS.register(
   TimeScale,
@@ -21,60 +21,59 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Decimation
-);
+  Decimation,
+)
 
 const WeatherPage = () => {
-  const [labels, setLabels] = useState([]);
-  const [temperature, setTemperature] = useState([]);
-  const [humidity, setHumidity] = useState([]);
+  const [labels, setLabels] = useState([])
+  const [temperature, setTemperature] = useState([])
+  const [humidity, setHumidity] = useState([])
 
   useEffect(() => {
-    loadApiData();
+    loadApiData()
   }, [])
 
   const loadApiData = () => {
-    fetch("/api/WeatherApi")
+    fetch('/api/WeatherApi')
       .then((response) => response.json())
       .then((data) => {
-        setLabels(data.map((i) => i.time));
-        setHumidity(data.map((i) => i.humidity));
-        setTemperature(data.map((i) => i.temperature));
-      });
-  };
-
+        setLabels(data.map((i) => i.time))
+        setHumidity(data.map((i) => i.humidity))
+        setTemperature(data.map((i) => i.temperature))
+      })
+  }
 
   const options = {
     responsive: true,
     interaction: {
-      mode: "index",
+      mode: 'index',
       intersect: false,
     },
     stacked: false,
     plugins: {
       title: {
         display: true,
-        text: "Weather Readings",
+        text: 'Weather Readings',
       },
     },
     scales: {
       x: {
-        type: "time",
+        type: 'time',
         time: {
-          unit: "minute",
+          unit: 'minute',
         },
       },
       y: {
-        type: "linear",
+        type: 'linear',
         display: true,
-        position: "left",
+        position: 'left',
         suggestedMin: 15,
         suggestedMax: 35,
       },
       y1: {
-        type: "linear",
+        type: 'linear',
         display: true,
-        position: "right",
+        position: 'right',
         grid: {
           drawOnChartArea: false,
         },
@@ -82,39 +81,38 @@ const WeatherPage = () => {
         suggestedMax: 90,
       },
     },
-  };
+  }
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Celsius",
+        label: 'Celsius',
         data: temperature,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        yAxisID: "y",
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        yAxisID: 'y',
         pointRadius: 0,
-
       },
       {
-        label: "Humidity",
+        label: 'Humidity',
         data: humidity,
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-        yAxisID: "y1",
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        yAxisID: 'y1',
         pointRadius: 0,
       },
     ],
-  };
+  }
 
   return (
-    <main className="theme-color pb-12 text-white min-h-screen">
+    <main className="theme-color min-h-screen pb-12 text-white">
       <h1 className="header-text mb-3 pt-24 text-center text-5xl font-bold lg:text-7xl">
         Temperature And Humidity
       </h1>
       <Line data={data} options={options} />
     </main>
-  );
-};
+  )
+}
 
-export default WeatherPage;
+export default WeatherPage

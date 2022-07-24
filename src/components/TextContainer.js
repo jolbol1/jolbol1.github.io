@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
 export const TextContainer = () => {
   return (
@@ -9,9 +9,12 @@ export const TextContainer = () => {
           <span className="underline">Career</span> 💼
         </h4>
         <p className="text-justify text-base md:text-lg	">
-          I am a software engineer currently working for a leading systems, engineering and technology company in the Cloud Technologies department.
-          Previously worked for a medium sized finance firm, developing in house apps to improve workflows. 
-          I have skills in developing CRUD apps with .NET, Building OfficeJS add-ins and full-stack web design.
+          I am a software engineer currently working for a leading systems,
+          engineering and technology company in the Cloud Technologies
+          department. Previously worked for a medium sized finance firm,
+          developing in house apps to improve workflows. I have skills in
+          developing CRUD apps with .NET, Building OfficeJS add-ins and
+          full-stack web design.
         </p>
         <br />
         <h4 className="text-center text-xl font-bold">
@@ -20,20 +23,20 @@ export const TextContainer = () => {
         <p className="text-justify text-base md:text-lg">
           I started coding over 10 years ago in Java, developing plugins for
           games I liked. Since then I have always had an interest in all things
-          tech, from micro-controllers to full-stack development. The combination
-          of problem solving and creativity continue to fuel my passion in the
-          rapidly changing field of technology.
+          tech, from micro-controllers to full-stack development. The
+          combination of problem solving and creativity continue to fuel my
+          passion in the rapidly changing field of technology.
         </p>
       </div>
       <Link
-        key={"more-info"}
-        to={"/about"}
+        key={'more-info'}
+        to={'/about'}
         className={
-          "my-12 mx-auto w-5/6 cursor-pointer rounded-lg bg-cyan-900 px-6 py-4 text-center font-bold shadow-2xl shadow-blue-500/50 hover:bg-cyan-600"
+          'my-12 mx-auto w-5/6 cursor-pointer rounded-lg bg-cyan-900 px-6 py-4 text-center font-bold shadow-2xl shadow-blue-500/50 hover:bg-cyan-600'
         }
       >
         Read More About Me
       </Link>
     </div>
-  );
-};
+  )
+}

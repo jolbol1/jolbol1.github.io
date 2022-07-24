@@ -70,14 +70,14 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
       url: `${siteUrl}${defaultBanner}`,
     },
     contactPoint: {
-      '@type': "ContactPoint",
-      email: "enquiries@jamesshopland.com",
-      contactType: "Owner",
+      '@type': 'ContactPoint',
+      email: 'enquiries@jamesshopland.com',
+      contactType: 'Owner',
       image: {
         '@type': 'ImageObject',
         url: seo.image,
       },
-    }
+    },
   }
 
   // Initial breadcrumb list
@@ -160,8 +160,16 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         <meta name="image" content={seo.image} />
         <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
         {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
-        {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
-        {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
+        {!article && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgWebPage)}
+          </script>
+        )}
+        {article && (
+          <script type="application/ld+json">
+            {JSON.stringify(schemaArticle)}
+          </script>
+        )}
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
       </Helmet>
       <Facebook
@@ -173,7 +181,12 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
         locale={ogLanguage}
         name={facebook}
       />
-      <Twitter title={seo.title} image={seo.image} desc={seo.description} username={twitter} />
+      <Twitter
+        title={seo.title}
+        image={seo.image}
+        desc={seo.description}
+        username={twitter}
+      />
     </>
   )
 }
