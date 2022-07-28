@@ -69,7 +69,7 @@ The about me page is generated from my GitHub profile, any changes there redeplo
 ### Built With
 
 - [![React][react.js]][react-url]
-- [![Gatsby][gatsby]][gatsby-badge]
+- [![Gatsby][gatsby-badge]][gatsby]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -152,3 +152,4 @@ Project Link: [https://github.com/jolbol1/jolbol1.github.io](https://github.com/
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
 [gatsby-badge]: https://img.shields.io/badge/Gatsby-%23663399.svg?style=for-the-badge&logo=gatsby&logoColor=white
+[gatsby]: https://www.gatsbyjs.com/
