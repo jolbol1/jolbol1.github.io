@@ -33,7 +33,7 @@
 				newLine.id = 'notFound';
 				newLine.className = 'text-white px-4 font-mono';
 			}
-			newLine.innerText = `Error: Command ${target.value} not found. \n This is not a real terminal dummy...`;
+			newLine.innerText = `Error: Command '${target.value}' not found. \n This is not a real terminal dummy...`;
 			(e.target as HTMLInputElement).value = '';
 			document.getElementById('shell')?.appendChild(newLine);
 			timer = setTimeout(() => {
@@ -93,7 +93,7 @@
 			</article>
 		</div>
 
-		<div class="flex flex-col sm:flex-row px-4">
+		<div class="flex flex-col sm:flex-row px-4 font-mono">
 			<span
 				class="text-lime-300 pr-2 last-line anim-invis whitespace-nowrap border-r-2 border-transparent"
 				>/james/site/scripts:$

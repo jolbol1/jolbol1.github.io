@@ -13,13 +13,17 @@
 	<header
 		class="px-6 sm:pl-0 col-span-4 h-fit sm:col-span-6 row-start-2 sm:col-start-2 flex flex-col items-start"
 	>
-		<h1 class="text-blue-400 header-text text-6xl sm:text-7xl md:text-8xl font-display font-bold ">
+		<h1
+			class="text-blue-400 header-text text-6xl sm:text-7xl md:text-8xl font-display font-bold z-10"
+		>
 			James
 		</h1>
-		<h1 class="text-gray-200 header-text text-6xl sm:text-7xl md:text-8xl font-display font-bold">
+		<h1
+			class="text-gray-200 header-text text-6xl sm:text-7xl md:text-8xl font-display font-bold z-10"
+		>
 			Shopland
 		</h1>
-		<p class="text-white pt-6 sm:text-2xl pl-1">
+		<p class="text-white pt-6 sm:text-2xl pl-1 z-10">
 			C# | .NET | React | Redux | TypeScript | and more...
 		</p>
 		<nav aria-label="Quick Links" class="z-10 flex flex-row gap-4 mt-4">
