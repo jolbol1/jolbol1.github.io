@@ -1,74 +1,61 @@
 {
-  "name": "personal-site",
-  "version": "1.0.0",
-  "private": true,
-  "description": "personal-site",
-  "author": "james",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && echo 'jamesshopland.com' > ./public/CNAME && gh-pages -d public",
-    "prettier:check": "npx prettier --check .",
-    "prettier:fix": "npx prettier --write .",
-    "lint": "npx eslint .",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "@fontsource/montserrat": "^4.5.2",
-    "@headlessui/react": "^1.4.3",
-    "@heroicons/react": "^1.0.5",
-    "autoprefixer": "^10.4.2",
-    "dotenv": "^14.2.0",
-    "gatsby": "^4.5.4",
-    "gatsby-plugin-image": "^2.5.2",
-    "gatsby-plugin-layout": "^3.5.0",
-    "gatsby-plugin-manifest": "^4.5.2",
-    "gatsby-plugin-postcss": "^5.5.0",
-    "gatsby-plugin-preact": "^6.5.0",
-    "gatsby-plugin-react-helmet": "^5.5.0",
-    "gatsby-plugin-sharp": "^4.5.2",
-    "gatsby-plugin-sitemap": "^5.5.0",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-filesystem": "^4.5.2",
-    "gatsby-source-github-api": "^1.0.0",
-    "gatsby-transformer-sharp": "^4.5.0",
-    "postcss": "^8.4.5",
-    "preact": "^10.6.4",
-    "preact-render-to-string": "^5.1.19",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-tsparticles": "^1.39.0",
-    "showdown": "^1.9.1",
-    "tailwindcss": "^3.0.15"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
-    "cz-emoji-conventional": "^1.0.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.30.1",
-    "gh-pages": "^3.2.3",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.3"
-  },
-  "lint-staged": {
-    "*.{css,less,scss,html,json,jsx,js}": [
-      "prettier --write ."
-    ],
-    "*.js": "eslint --fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-emoji-conventional"
-    }
-  }
+	"name": "jscom",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"prepare": "husky install"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.22.2",
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"@types/cookie": "^0.5.1",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"autoprefixer": "^10.4.7",
+		"cz-emoji-conventional": "^1.0.1",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.0.3",
+		"postcss": "^8.4.14",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.46.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.5",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.4",
+		"vite": "^3.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fontsource/inter": "^4.5.11",
+		"@types/matter-js": "^0.17.7",
+		"cookie": "^0.4.1",
+		"matter-js": "^0.18.0",
+		"poly-decomp": "^0.3.0",
+		"svelte-parallax": "^0.6.0"
+	},
+	"lint-staged": {
+		"*.{css,less,scss,json,jsx,js,svelte,ts}": [
+			"prettier --check --plugin-search-dir=. ."
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-emoji-conventional"
+		}
+	}
 }
