@@ -1,0 +1,53 @@
+.anim-typewriter {
+	animation: 1s fadeIn 2s normal both, typewriter 2s steps(22) 2.8s 1 normal;
+}
+
+.anim-typewriter1 {
+	animation: typewriter 2s steps(22) 5s 1 normal both;
+}
+
+.career-text {
+	animation: 2s fadeIn 2s normal both;
+}
+
+.personal-text {
+	animation: 5s fadeIn 2s normal both;
+}
+
+.personal-line {
+	animation: 3s fadeIn 2s normal both;
+}
+
+.last-line {
+	animation: 6s fadeIn 2s normal both;
+}
+
+@keyframes fadeIn {
+	99% {
+		visibility: hidden;
+	}
+
+	100% {
+		visibility: visible;
+	}
+}
+
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 8em;
+	}
+}
+
+@keyframes blinkTextCursor {
+	from {
+		border-right-color: transparent;
+	}
+
+	to {
+		border-right-color: #fff;
+	}
+}
