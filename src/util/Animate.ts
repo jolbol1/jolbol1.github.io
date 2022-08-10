@@ -269,31 +269,6 @@ const animate = (
 	// keep the mouse in sync with rendering
 	render.mouse = mouse;
 
-	// add gyro control
-	if (typeof window !== 'undefined') {
-		// eslint-disable-next-line no-var
-		var updateGravity = function (event) {
-			let orientation = typeof window.orientation !== 'undefined' ? window.orientation : 0,
-				gravity = engine.gravity;
-
-			if (orientation === 0) {
-				gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-				gravity.y = Common.clamp(event.beta, -90, 90) / 90;
-			} else if (orientation === 180) {
-				gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-				gravity.y = Common.clamp(-event.beta, -90, 90) / 90;
-			} else if (orientation === 90) {
-				gravity.x = Common.clamp(event.beta, -90, 90) / 90;
-				gravity.y = Common.clamp(-event.gamma, -90, 90) / 90;
-			} else if (orientation === -90) {
-				gravity.x = Common.clamp(-event.beta, -90, 90) / 90;
-				gravity.y = Common.clamp(event.gamma, -90, 90) / 90;
-			}
-		};
-
-		window.addEventListener('deviceorientation', updateGravity);
-	}
-
 	// fit the render viewport to the scene
 	Render.lookAt(render, {
 		min: { x: 0, y: 0 },
@@ -309,14 +284,8 @@ const animate = (
 		stop: function () {
 			Matter.Render.stop(render!);
 			Matter.Runner.stop(runner!);
-			if (typeof window !== 'undefined') {
-				window.removeEventListener('deviceorientation', updateGravity);
-			}
 		},
 		delete: function () {
-			if (typeof window !== 'undefined') {
-				window.removeEventListener('deviceorientation', updateGravity);
-			}
 			if (engine) {
 				Engine.clear(engine);
 			}
