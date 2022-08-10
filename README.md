@@ -58,18 +58,19 @@
 
 My personal portfolio site. Made as a hub to show of my projects and skills.
 
-I use this site as a place to learn new frameworks and more, from time to time it may completely change as I try out new things. Currently using Gatsby and React.
+I use this site as a place to learn new frameworks and more, from time to time it may completely change as I try out new things. Currently using Svelte and TypeScript.
+This was a rewrite from the Gatsby React version.
 
 The site is deployed via Github actions.
-
-The about me page is generated from my GitHub profile, any changes there redeploys my site automatically with github actions.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
-- [![React][react.js]][react-url]
-- [![Gatsby][gatsby-badge]][gatsby]
+- [![Svelte][svelte-badge]][svelte-url]
+- [![Vite][vite-badge]][vite-url]
+- [![Typescript][typescript-badge]][typescript-url]
+- [![Tailwind][tailwind-badge]][tailwind-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,3 +154,11 @@ Project Link: [https://github.com/jolbol1/jolbol1.github.io](https://github.com/
 [jquery-url]: https://jquery.com
 [gatsby-badge]: https://img.shields.io/badge/Gatsby-%23663399.svg?style=for-the-badge&logo=gatsby&logoColor=white
 [gatsby]: https://www.gatsbyjs.com/
+[typescript-badge]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://www.typescriptlang.org/
+[tailwind-badge]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com/
+[svelte-badge]: https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white
+[svelte-url]: https://svelte.dev/
+[vite-badge]: https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white
+[vite-url]: https://vitejs.dev/
