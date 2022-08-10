@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 
 	const animations: IntersectionObserverCallback = async (element) => {
-		console.log(element[0]);
 		if (element[0].isIntersecting) {
 			await import('../styles/animation.css');
 		}

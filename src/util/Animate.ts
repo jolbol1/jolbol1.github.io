@@ -207,8 +207,6 @@ const animate = (
 		}
 		if (stack) {
 			const bodies = (<Matter.Composite>stack).bodies;
-			console.log(bodies.length);
-
 			bodies.forEach((body, index) => {
 				const isOff = isOffscreen(body.position.y, canvas.height);
 				if (isOff) {
