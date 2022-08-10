@@ -6,7 +6,7 @@
 
 html {
 	@apply bg-slate-900;
-	@apply snap-y snap-mandatory;
+	@apply snap-y snap-proximity;
 }
 
 .header-text {
