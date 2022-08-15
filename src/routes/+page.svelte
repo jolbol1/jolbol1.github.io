@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
 	import IntroSection from '../components/IntroSection.svelte';
 	import AboutSection from '../components/AboutSection.svelte';
