@@ -19,11 +19,11 @@
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.1",
 		"@typescript-eslint/eslint-plugin": "^5.33.1",
-		"@typescript-eslint/parser": "^5.27.0",
+		"@typescript-eslint/parser": "^5.33.1",
 		"autoprefixer": "^10.4.7",
 		"cz-emoji-conventional": "^1.0.1",
 		"cz-gitmojis": "^1.0.3",
-		"eslint": "^8.16.0",
+		"eslint": "^8.22.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"husky": "^8.0.0",
@@ -44,7 +44,7 @@
 	"dependencies": {
 		"@fontsource/inter": "^4.5.12",
 		"@types/matter-js": "^0.17.7",
-		"cookie": "^0.4.1",
+		"cookie": "^0.5.0",
 		"matter-js": "^0.18.0",
 		"poly-decomp": "^0.3.0",
 		"svelte-parallax": "^0.6.0"
