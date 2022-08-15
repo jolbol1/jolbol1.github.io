@@ -41,7 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter": "^4.5.11",
+		"@fontsource/inter": "^4.5.12",
 		"@types/matter-js": "^0.17.7",
 		"cookie": "^0.4.1",
 		"matter-js": "^0.18.0",
