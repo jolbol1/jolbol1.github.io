@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let disable: boolean = false;
+	export let disable = false;
 	const toggleAnimations = () => {
 		disable = !disable;
 	};
