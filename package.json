@@ -19,7 +19,7 @@
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.1",
 		"@typescript-eslint/eslint-plugin": "^5.48.1",
-		"@typescript-eslint/parser": "^5.48.1",
+		"@typescript-eslint/parser": "^5.49.0",
 		"autoprefixer": "^10.4.13",
 		"cz-emoji-conventional": "^1.0.1",
 		"cz-gitmojis": "^1.0.3",
