@@ -13,7 +13,7 @@
 <h3 align="center">JamesShopland.com</h3>
 
   <p align="center">
-    My personal website. Currently built using Gatsby and React. Playground for me to learn new things.
+    My personal website. Old version built using Gatsby and React. Playground for me to learn new things.
     <br />
     <a href="https://github.com/jolbol1/jolbol1.github.io"><strong>Explore the docs »</strong></a>
     <br />
