@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">JamesShopland.com</h3>
+<h3 align="center">OLD - JamesShopland.com</h3>
 
   <p align="center">
     My personal website. Currently built using SvelteKit. Playground for me to learn new things.
@@ -29,6 +29,8 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+
+**This site has now been rewritten and has moved to** [jolbol1/jamesshopland.com](https://github.com/jolbol1/JamesShopland.com)
 
 My personal portfolio site. Made as a hub to show of my projects and skills.
 
